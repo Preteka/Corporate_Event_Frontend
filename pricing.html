@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="assets/logo/venora-favicon.png" sizes="120x119">
+
+  <title>Corporate Event Packages &amp; Pricing | VENORA Events &amp; Venues</title>
+  <meta name="description"
+    content="Compare VENORA corporate event packages: Essential, Professional, and Signature plans with transparent venue discovery, run-of-show coordination, and hospitality options.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Corporate Event Packages &amp; Pricing | VENORA Events &amp; Venues">
+  <meta property="og:description"
+    content="Explore transparent options and choose a starting point based on your event requirements.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/pricing.css">
+
+  <!-- Theme Script: Runs immediately to prevent flash of unstyled theme -->
+  <script src="js/theme.js"></script>
+</head>
+
+<body>
+  <!-- Accessible Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Navbar Mount Point -->
+  <div id="navbar-mount"></div>
+
+  <!-- Main Landmark -->
+  <main id="main-content">
+
+    <!-- ====================================================================
+         SECTION A: PRICING HERO (Cinematic Photographic Header)
+         ==================================================================== -->
+    <section class="pricing-hero-section" id="pricing-hero" aria-label="Pricing Overview Header">
+      <!-- Full-Width Background with Refined Blur & Theme-Aware Overlays -->
+      <div class="pricing-hero-bg" aria-hidden="true">
+        <img src="assets/images/venue-corporate.jpg" alt="VENORA luxury corporate event venue interior"
+          class="pricing-hero-bg-img" fetchpriority="high">
+        <div class="pricing-hero-overlay"></div>
+        <div class="pricing-hero-glow"></div>
+      </div>
+
+      <div class="container pricing-hero-container">
+        <!-- Left Column: Main Typography & CTA Actions -->
+        <div class="pricing-hero-content">
+          <div class="section-eyebrow pricing-hero-eyebrow reveal-on-scroll">INVEST IN A BETTER EVENT</div>
+          <h1 class="pricing-hero-title reveal-on-scroll stagger-1">
+            The Right Experience.<br>
+            <span class="pricing-gold-text">The Right Plan.</span>
+          </h1>
+          <p class="pricing-hero-desc reveal-on-scroll stagger-2">
+            Explore flexible options designed to help you discover exceptional venues and organize memorable corporate events with confidence.
+          </p>
+          <div class="pricing-hero-actions reveal-on-scroll stagger-3">
+            <a href="#pricing-cards" class="btn btn-primary" id="hero-explore-packages-btn">
+              <span>Explore Packages</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </a>
+            <a href="#package-comparison" class="btn btn-outline-light" id="hero-compare-features-btn">
+              <span>Compare Features</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Sophisticated Illuminated Gold Circular Venue Portal -->
+        <div class="pricing-hero-visual reveal-on-scroll stagger-2" aria-hidden="true">
+          <div class="pricing-portal-wrapper">
+            <!-- Slow Concentric Orbit Ring with Cardinal Accents -->
+            <div class="pricing-orbit-ring">
+              <span class="orbit-marker marker-n"></span>
+              <span class="orbit-marker marker-e"></span>
+              <span class="orbit-marker marker-s"></span>
+              <span class="orbit-marker marker-w"></span>
+            </div>
+            <!-- Secondary Ambient Halo Ring -->
+            <div class="pricing-halo-ring"></div>
+            <!-- Main Circular Venue Frame -->
+            <div class="pricing-portal-frame">
+              <img src="assets/images/venue-meeting.jpg" alt="" class="pricing-portal-img" loading="eager">
+              <div class="pricing-portal-shade"></div>
+            </div>
+            <!-- Refined Floating Perimeter Tag -->
+            <div class="pricing-portal-badge">
+              <span class="pricing-badge-dot"></span>
+              <span class="pricing-badge-text">CURATED TIERS &bull; BESPOKE SPACES</span>
+            </div>
+            <!-- Understated Coordinate Accent -->
+            <div class="pricing-portal-coord">
+              <span>EST. VENORA</span>
+              <span class="coord-divider">&bull;</span>
+              <span>2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION B: PRICING CARDS
+         ==================================================================== -->
+    <section class="pricing-cards-section" id="pricing-cards" aria-label="VENORA Pricing Packages">
+      <div class="container">
+        <div class="pricing-cards-grid" id="pricing-cards-container">
+          <!-- Rendered dynamically by js/pricing.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION C: PACKAGE COMPARISON TABLE
+         ==================================================================== -->
+    <section class="pricing-comparison-section" id="package-comparison" aria-label="Detailed Package Comparison">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-eyebrow">DETAILED BREAKDOWN</div>
+          <h2 class="section-title">Compare Package Features</h2>
+          <p class="section-desc">
+            A comprehensive side-by-side view of deliverables, coordination coverage, and logistical milestones.
+          </p>
+        </div>
+
+        <div class="comparison-table-wrapper reveal-on-scroll stagger-1">
+          <table class="comparison-table" aria-label="Plan feature matrix">
+            <thead>
+              <tr>
+                <th scope="col" class="col-feature">Deliverables &amp; Services</th>
+                <th scope="col" class="col-plan">Essential</th>
+                <th scope="col" class="col-plan is-featured-col">Professional</th>
+                <th scope="col" class="col-plan">Signature</th>
+              </tr>
+            </thead>
+            <tbody id="comparison-table-body">
+              <!-- Rendered dynamically by js/pricing.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION D: PRICING FAQS
+         ==================================================================== -->
+    <section class="pricing-faqs-section" id="pricing-faqs" aria-label="Pricing Frequently Asked Questions">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-eyebrow">TRANSPARENCY &amp; POLICIES</div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">
+            Clear information regarding how pricing, deposits, venue billing, and modifications are structured.
+          </p>
+        </div>
+
+        <div class="pricing-faqs-container" id="pricing-faqs-container">
+          <!-- Rendered dynamically by js/pricing.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION E: FINAL CALL TO ACTION
+         ==================================================================== -->
+    <section class="pricing-final-cta" id="pricing-cta" aria-label="Pricing Call to Action">
+      <div class="pricing-cta-bg" aria-hidden="true">
+        <img src="assets/images/cta-venue.jpg" alt="Illuminated glass architectural venue pavilion"
+          class="pricing-cta-img">
+        <div class="pricing-cta-overlay"></div>
+      </div>
+      <div class="container pricing-cta-content">
+        <div class="pricing-cta-eyebrow reveal-on-scroll">TAILORED CONSULTATION</div>
+        <h2 class="pricing-cta-title reveal-on-scroll stagger-1">
+          Not Sure Which Option Fits?
+        </h2>
+        <p class="pricing-cta-desc reveal-on-scroll stagger-2">
+          Share your event requirements and we will help you identify the appropriate next step.
+        </p>
+        <div class="pricing-cta-actions reveal-on-scroll stagger-3">
+          <a href="checkout.html?package=custom" class="btn btn-primary" id="discuss-event-cta-btn">
+            <span>Discuss Your Event</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="services.html" class="btn btn-outline-light">
+            <span>Explore All Services</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer Mount Point -->
+  <div id="footer-mount"></div>
+
+  <!-- Centralized Pricing Data & Component Scripts -->
+  <script src="js/data/pricing.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pricing.js"></script>
+</body>
+
+</html>

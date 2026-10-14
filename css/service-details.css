@@ -1,0 +1,706 @@
+/* ==========================================================================
+   VENORA - Dynamic Service Details Stylesheet (service-details.css)
+   Complements style.css, navbar.css, footer.css
+   Inherits Home 1 typography, gold accents, theme tokens & editorial layouts
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Breadcrumbs & Service Hero
+   -------------------------------------------------------------------------- */
+.details-hero-section {
+  position: relative;
+  padding-block-start: clamp(6.5rem, 9vw, 8.5rem);
+  padding-block-end: clamp(3.5rem, 6vw, 5rem);
+  background-color: var(--bg-primary);
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.details-breadcrumbs {
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.breadcrumbs-list a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbs-list a:hover {
+  color: var(--gold-primary);
+}
+
+.breadcrumb-separator {
+  opacity: 0.5;
+}
+
+.breadcrumb-current {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.details-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.details-hero-content {
+  max-width: 640px;
+}
+
+.details-category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  background-color: var(--gold-tint);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+}
+
+.details-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.35rem, 4.2vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin: 0 0 1.25rem 0;
+  transition: color var(--transition-normal);
+}
+
+.details-hero-desc {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0 0 2.25rem 0;
+  transition: color var(--transition-normal);
+}
+
+.details-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* Service Hero Media */
+.details-hero-media-wrap {
+  position: relative;
+  height: clamp(340px, 32vw, 480px);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-card);
+}
+
+.details-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.details-hero-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(16, 21, 34, 0.65) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.details-media-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  inset-inline-start: 1.5rem;
+  padding: 0.6rem 1.15rem;
+  background-color: var(--surface-translucent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   2. Service Overview & Key Benefits Section
+   -------------------------------------------------------------------------- */
+.details-overview-section {
+  padding-block: clamp(4rem, 6.5vw, 6rem);
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.details-overview-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: flex-start;
+}
+
+.details-full-text {
+  font-size: clamp(1.05rem, 1.2vw, 1.15rem);
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+}
+
+.details-benefits-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 2.5vw, 2.5rem);
+  box-shadow: var(--card-shadow);
+  border-top: 4px solid var(--gold-primary);
+}
+
+.benefits-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1.25rem 0;
+}
+
+.details-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.details-benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.benefit-check-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--gold-tint);
+  color: var(--gold-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Key Features Section
+   -------------------------------------------------------------------------- */
+.details-features-section {
+  padding-block: clamp(4rem, 6.5vw, 6rem);
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.features-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.25rem, 2vw, 1.75rem);
+  margin-top: clamp(2rem, 3.5vw, 3rem);
+}
+
+.feature-box-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: clamp(1.5rem, 2.2vw, 2.25rem);
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.feature-box-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(216, 185, 118, 0.4);
+}
+
+.feature-box-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--gold-tint);
+  color: var(--gold-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.feature-box-title {
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.65rem 0;
+  letter-spacing: -0.01em;
+}
+
+.feature-box-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. How This Service Works (Step Timeline)
+   -------------------------------------------------------------------------- */
+.details-process-section {
+  padding-block: clamp(4rem, 6.5vw, 6rem);
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.service-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.service-step-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.service-step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-primary);
+}
+
+.service-step-pill {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--gold-primary);
+  color: #101522;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 12px rgba(197, 161, 91, 0.25);
+}
+
+.service-step-title {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.service-step-desc {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. Pricing & Scope Explanation Box
+   -------------------------------------------------------------------------- */
+.details-pricing-section {
+  padding-block: clamp(4rem, 6.5vw, 6rem);
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.details-pricing-banner {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 3.5vw, 3.25rem);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.pricing-banner-text {
+  max-width: 680px;
+}
+
+.pricing-banner-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+}
+
+.pricing-banner-desc {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.pricing-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   6. Accessible FAQs Accordion
+   -------------------------------------------------------------------------- */
+.details-faqs-section {
+  padding-block: clamp(4rem, 6.5vw, 6rem);
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.faqs-container-narrow {
+  max-width: 820px;
+  margin-inline: auto;
+  margin-top: clamp(2rem, 3.5vw, 3rem);
+}
+
+.faq-accordion-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  background-color: var(--surface-card);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.faq-accordion-item:hover {
+  border-color: rgba(216, 185, 118, 0.4);
+}
+
+.faq-accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.35rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: start;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.faq-accordion-trigger:hover {
+  color: var(--gold-primary);
+}
+
+.faq-icon-chevron {
+  width: 20px;
+  height: 20px;
+  color: var(--gold-primary);
+  transition: transform var(--transition-normal);
+  flex-shrink: 0;
+  margin-inline-start: 1rem;
+}
+
+.faq-accordion-item.is-open .faq-icon-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-accordion-content {
+  padding: 0 1.5rem 1.35rem 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   7. Related Services Grid
+   -------------------------------------------------------------------------- */
+.details-related-section {
+  padding-block: clamp(4rem, 6.5vw, 6rem);
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.related-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2vw, 2rem);
+  margin-top: clamp(2rem, 3.5vw, 3rem);
+}
+
+.related-service-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.related-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.related-card-media {
+  height: 190px;
+  overflow: hidden;
+}
+
+.related-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-cinematic);
+}
+
+.related-service-card:hover .related-card-img {
+  transform: scale(1.05);
+}
+
+.related-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.related-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.related-card-desc {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0 0 1.25rem 0;
+  flex: 1;
+}
+
+.related-card-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   8. Final CTA Section
+   -------------------------------------------------------------------------- */
+.details-final-cta {
+  position: relative;
+  padding-block: clamp(5rem, 8vw, 7rem);
+  background-color: #101522;
+  color: #FFFFFF;
+  text-align: center;
+  overflow: hidden;
+}
+
+[data-theme="light"] .details-final-cta {
+  background-color: #F7F5F0;
+}
+
+.details-cta-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.details-cta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  filter: brightness(1.05) contrast(1.04);
+}
+
+[data-theme="light"] .details-cta-img {
+  opacity: 0.45;
+  filter: brightness(1.08) contrast(1.02);
+}
+
+.details-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center 45%,
+    rgba(16, 21, 34, 0.58) 0%,
+    rgba(16, 21, 34, 0.82) 75%,
+    rgba(16, 21, 34, 0.92) 100%
+  );
+}
+
+[data-theme="light"] .details-cta-overlay {
+  background:
+    radial-gradient(ellipse at center 45%, rgba(255, 255, 255, 0.65) 0%, rgba(247, 245, 240, 0.88) 75%, rgba(247, 245, 240, 0.96) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(247, 245, 240, 0.92) 100%);
+}
+
+.details-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.details-cta-eyebrow {
+  color: var(--gold-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.details-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.15rem, 4vw, 3.25rem);
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.02em;
+}
+
+[data-theme="light"] .details-cta-title {
+  color: #101522;
+}
+
+.details-cta-desc {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.6;
+  color: #B7BBC5;
+  margin: 0 0 2.25rem 0;
+}
+
+[data-theme="light"] .details-cta-desc {
+  color: #4B5563;
+}
+
+.details-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+
+/* --------------------------------------------------------------------------
+   9. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .details-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .details-hero-media-wrap {
+    height: 380px;
+  }
+  .details-overview-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .features-grid-2x2 {
+    grid-template-columns: 1fr;
+  }
+  .service-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .related-services-grid {
+    grid-template-columns: 1fr;
+    max-width: 540px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .details-pricing-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pricing-banner-actions {
+    width: 100%;
+  }
+  .pricing-banner-actions .btn {
+    width: 100%;
+  }
+  .details-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .details-cta-actions .btn {
+    width: 100%;
+  }
+}

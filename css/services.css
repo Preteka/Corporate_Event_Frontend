@@ -1,0 +1,640 @@
+/* ==========================================================================
+   VENORA - Services Page Stylesheet (services.css)
+   Complements style.css, navbar.css, footer.css
+   Inherits Home 1 typography, gold accents, theme tokens & card aesthetics
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Services Hero Section
+   -------------------------------------------------------------------------- */
+.services-hero-section {
+  position: relative;
+  padding-block-start: clamp(6.5rem, 9vw, 8.5rem);
+  padding-block-end: clamp(3.5rem, 6vw, 5rem);
+  background-color: var(--bg-primary);
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.services-hero-glow {
+  position: absolute;
+  top: 10%;
+  inset-inline-end: 5%;
+  width: clamp(350px, 45vw, 600px);
+  height: clamp(350px, 45vw, 600px);
+  background: radial-gradient(circle, var(--gold-tint) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.services-hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  position: relative;
+  z-index: 2;
+}
+
+.services-hero-text {
+  max-width: 620px;
+}
+
+.services-hero-eyebrow {
+  margin-bottom: 0.85rem;
+}
+
+.services-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.35rem, 4.4vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin: 0 0 1.35rem 0;
+  transition: color var(--transition-normal);
+}
+
+.services-hero-desc {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0 0 2.25rem 0;
+  transition: color var(--transition-normal);
+}
+
+.services-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* Services Hero Visual Card */
+.services-hero-visual {
+  position: relative;
+}
+
+.services-hero-img-wrap {
+  position: relative;
+  height: clamp(340px, 32vw, 460px);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-card);
+}
+
+.services-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.services-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(16, 21, 34, 0.6) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.services-hero-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  inset-inline-start: 1.5rem;
+  padding: 0.65rem 1.15rem;
+  background-color: var(--surface-translucent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--gold-primary);
+}
+
+.badge-text {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* --------------------------------------------------------------------------
+   2. Category Filter Bar
+   -------------------------------------------------------------------------- */
+.services-filter-section {
+  padding-block: 2rem 1.5rem;
+  background-color: var(--bg-primary);
+  position: sticky;
+  top: var(--nav-height, 64px);
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.filter-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-pills-list {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-block: 0.25rem;
+}
+
+.filter-pills-list::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-pill-btn {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-pill-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--gold-primary);
+}
+
+.filter-pill-btn.is-active {
+  color: #101522;
+  background-color: var(--gold-primary);
+  border-color: var(--gold-primary);
+  box-shadow: 0 4px 14px rgba(197, 161, 91, 0.25);
+}
+
+[data-theme="dark"] .filter-pill-btn.is-active {
+  color: #101522;
+  background-color: var(--gold-primary);
+}
+
+.filter-counter {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   3. Six-Service Gallery Grid
+   -------------------------------------------------------------------------- */
+.services-gallery-section {
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+  background-color: var(--bg-primary);
+  transition: background-color var(--transition-normal);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+/* Service Card */
+.service-item-card {
+  position: relative;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal),
+              box-shadow var(--transition-normal),
+              border-color var(--transition-normal);
+}
+
+.service-item-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(216, 185, 118, 0.5);
+}
+
+/* Card Media */
+.service-item-media {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background-color: #121724;
+}
+
+.service-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s var(--ease-cinematic);
+}
+
+.service-item-card:hover .service-item-img {
+  transform: scale(1.05);
+}
+
+.service-item-category-tag {
+  position: absolute;
+  top: 1rem;
+  inset-inline-start: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #101522;
+  background-color: var(--gold-primary);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+/* Card Body */
+.service-item-body {
+  padding: clamp(1.5rem, 2vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.service-item-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.015em;
+  transition: color var(--transition-normal);
+}
+
+.service-item-desc {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 0 1.35rem 0;
+  flex: 1;
+  transition: color var(--transition-normal);
+}
+
+/* Benefits Mini-List */
+.service-item-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.65rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+.service-item-benefits li {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  line-height: 1.4;
+}
+
+.benefit-bullet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+/* Card Footer Actions */
+.service-item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.service-details-link {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.service-details-link:hover {
+  color: var(--gold-deep);
+  gap: 0.65rem;
+}
+
+.service-enquire-btn {
+  font-size: 0.8125rem;
+  padding: 0.45rem 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Why Choose VENORA Section
+   -------------------------------------------------------------------------- */
+.services-why-section {
+  padding-block: clamp(4rem, 6.5vw, 6rem);
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.why-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: clamp(2rem, 3.5vw, 3rem);
+}
+
+.why-pillar-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 2.5vw, 2.5rem);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.why-pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.pillar-number {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin-bottom: 1rem;
+}
+
+.pillar-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.01em;
+}
+
+.pillar-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. Process Preview Section
+   -------------------------------------------------------------------------- */
+.services-process-section {
+  padding-block: clamp(4rem, 6.5vw, 6rem);
+  background-color: var(--bg-primary);
+  transition: background-color var(--transition-normal);
+}
+
+.process-steps-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
+  position: relative;
+}
+
+.process-step-item {
+  position: relative;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.process-step-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-primary);
+}
+
+.process-step-num {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--gold-tint);
+  color: var(--gold-primary);
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.process-step-title {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.process-step-desc {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. Final CTA Section (Inherited Home 1 / Home 2 Midnight Glow)
+   -------------------------------------------------------------------------- */
+.services-final-cta {
+  position: relative;
+  padding-block: clamp(5rem, 8vw, 7rem);
+  background-color: #101522;
+  color: #FFFFFF;
+  overflow: hidden;
+  text-align: center;
+}
+
+[data-theme="light"] .services-final-cta {
+  background-color: #F7F5F0;
+}
+
+.services-cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.services-cta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  filter: brightness(1.05) contrast(1.04);
+}
+
+[data-theme="light"] .services-cta-img {
+  opacity: 0.45;
+  filter: brightness(1.08) contrast(1.02);
+}
+
+.services-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center 45%,
+    rgba(16, 21, 34, 0.58) 0%,
+    rgba(16, 21, 34, 0.82) 75%,
+    rgba(16, 21, 34, 0.92) 100%
+  );
+}
+
+[data-theme="light"] .services-cta-overlay {
+  background:
+    radial-gradient(ellipse at center 45%, rgba(255, 255, 255, 0.65) 0%, rgba(247, 245, 240, 0.88) 75%, rgba(247, 245, 240, 0.96) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(247, 245, 240, 0.92) 100%);
+}
+
+.services-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.services-cta-eyebrow {
+  color: var(--gold-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.services-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.15rem, 4vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.18;
+  color: #FFFFFF;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.02em;
+}
+
+[data-theme="light"] .services-cta-title {
+  color: #101522;
+}
+
+.services-cta-desc {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.6;
+  color: #B7BBC5;
+  margin: 0 0 2.25rem 0;
+}
+
+[data-theme="light"] .services-cta-desc {
+  color: #4B5563;
+}
+
+.services-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+
+/* --------------------------------------------------------------------------
+   7. Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .services-hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .services-hero-img-wrap {
+    height: 380px;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-steps-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .process-steps-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .services-filter-section {
+    top: 56px;
+  }
+  .services-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .services-cta-actions .btn {
+    width: 100%;
+  }
+}

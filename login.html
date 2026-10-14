@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="assets/logo/venora-favicon.png" sizes="120x119">
+
+  <title>Client Sign In | VENORA Events &amp; Venues</title>
+  <meta name="description" content="Sign in to your VENORA account to manage corporate event bookings, view venue enquiry updates, and coordinate details.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Client Sign In | VENORA Events &amp; Venues">
+  <meta property="og:description" content="Sign in to manage your corporate event bookings and venue details.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/auth.css">
+
+  <!-- Theme Script: Runs immediately to prevent flash of unstyled theme -->
+  <script src="js/theme.js"></script>
+</head>
+
+<body>
+  <!-- Accessible Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Navbar Mount Point -->
+  <div id="navbar-mount"></div>
+
+  <!-- Main Landmark -->
+  <main id="main-content">
+    <section class="auth-page-section" aria-label="Client Sign In Portal">
+      <div class="auth-bg-glow" aria-hidden="true"></div>
+
+      <div class="auth-card-container">
+        <div class="auth-card">
+          <div class="auth-card-header">
+            <a href="index.html" class="auth-brand-logo" aria-label="VENORA Home">
+              <img src="assets/logo/logo.png" alt="VENORA Events &amp; Venues" width="160" height="54">
+            </a>
+            <h1 class="auth-title">Welcome Back</h1>
+            <p class="auth-subtitle">Sign in to continue planning your corporate event.</p>
+          </div>
+
+          <!-- Alert Notification Box -->
+          <div id="auth-alert" class="auth-alert-banner" role="alert" hidden></div>
+
+          <!-- Sign In Form -->
+          <form id="login-form" class="auth-form" novalidate>
+            <div class="form-group">
+              <label for="login-email" class="form-label">Corporate Email</label>
+              <div class="form-input-wrap">
+                <input type="email" id="login-email" name="email" class="form-input" placeholder="colleague@enterprise.com" required autocomplete="email">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="login-password" class="form-label">Password</label>
+              <div class="form-input-wrap has-toggle">
+                <input type="password" id="login-password" name="password" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+                <button type="button" class="password-toggle-btn" data-toggle="password" data-target="login-password" aria-label="Show password">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-row-utility">
+              <label class="checkbox-label">
+                <input type="checkbox" name="remember" class="form-checkbox">
+                <span>Remember me</span>
+              </label>
+              <a href="#forgot" class="auth-utility-link" onclick="alert('Password reset instructions will be sent to your corporate email.'); return false;">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary auth-submit-btn" id="login-submit-btn">
+              <span>Sign In to Portal</span>
+            </button>
+          </form>
+
+          <div class="auth-card-footer">
+            <span>Don't have an account yet?</span>
+            <a href="signup.html" id="link-to-signup">Create an Account</a>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="index.html" class="auth-back-link">
+            <span aria-hidden="true">&larr;</span>
+            <span>Return to VENORA Home</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer Mount Point -->
+  <div id="footer-mount"></div>
+
+  <!-- Shared Component Loader & Auth Script -->
+  <script src="js/components.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+
+</html>

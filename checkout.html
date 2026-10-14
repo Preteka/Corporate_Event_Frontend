@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="assets/logo/venora-favicon.png" sizes="120x119">
+
+  <title>Event Booking &amp; Enquiry | VENORA Events &amp; Venues</title>
+  <meta name="description" content="Submit your corporate event requirements, select venue and planning packages, and coordinate details with dedicated VENORA managers.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Event Booking &amp; Enquiry | VENORA Events &amp; Venues">
+  <meta property="og:description" content="Submit your corporate event requirements and begin your planning workflow.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/checkout.css">
+
+  <!-- Theme Script: Runs immediately to prevent flash of unstyled theme -->
+  <script src="js/theme.js"></script>
+</head>
+
+<body>
+  <!-- Accessible Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Navbar Mount Point -->
+  <div id="navbar-mount"></div>
+
+  <!-- Main Landmark -->
+  <main id="main-content">
+    <section class="checkout-page-section" aria-label="Event Booking and Enquiry Workflow">
+      <div class="container">
+
+        <!-- Page Header -->
+        <div class="checkout-header">
+          <div class="section-eyebrow">STRUCTURED PLANNING</div>
+          <h1 class="checkout-title">Event Requirement &amp; Booking Enquiry</h1>
+          <p class="checkout-subtitle">Provide your specifications to receive a customized coordination proposal.</p>
+        </div>
+
+        <!-- Stepper Progress Bar -->
+        <nav class="stepper-nav" aria-label="Booking progress">
+          <div class="stepper-step is-active" data-step-indicator="1">
+            <span class="step-num-bubble">01</span>
+            <span>Package</span>
+          </div>
+          <span class="stepper-divider" aria-hidden="true"></span>
+          <div class="stepper-step" data-step-indicator="2">
+            <span class="step-num-bubble">02</span>
+            <span>Event Details</span>
+          </div>
+          <span class="stepper-divider" aria-hidden="true"></span>
+          <div class="stepper-step" data-step-indicator="3">
+            <span class="step-num-bubble">03</span>
+            <span>Customer Info</span>
+          </div>
+          <span class="stepper-divider" aria-hidden="true"></span>
+          <div class="stepper-step" data-step-indicator="4">
+            <span class="step-num-bubble">04</span>
+            <span>Review &amp; Submit</span>
+          </div>
+        </nav>
+
+        <!-- Main 2-Column Grid -->
+        <div class="checkout-layout-grid">
+
+          <!-- Left Column: Step Panels -->
+          <div class="checkout-form-card" id="checkout-steps-form">
+
+            <!-- STEP 1: SELECT PACKAGE -->
+            <div class="checkout-step-panel" data-step="1">
+              <h2 class="step-panel-title">1. Choose Your Package Tier</h2>
+              <p class="step-panel-desc">Select a planning foundation or modify your current selection.</p>
+
+              <div class="package-options-grid">
+                <div class="package-option-card" data-package="essential">
+                  <h3 class="opt-card-name">Essential</h3>
+                  <div class="opt-card-price">Custom Quote</div>
+                  <p class="opt-card-desc">For board meetings &amp; straightforward venue discovery (up to 50 delegates).</p>
+                </div>
+
+                <div class="package-option-card is-selected" data-package="professional">
+                  <h3 class="opt-card-name">Professional</h3>
+                  <div class="opt-card-price">Custom Quote</div>
+                  <p class="opt-card-desc">Conferences, workshops &amp; structured run-of-show (up to 250 delegates).</p>
+                </div>
+
+                <div class="package-option-card" data-package="signature">
+                  <h3 class="opt-card-name">Signature</h3>
+                  <div class="opt-card-price">Tailored Quote</div>
+                  <p class="opt-card-desc">Flagship summits, bespoke catering &amp; on-site production leads (250+ delegates).</p>
+                </div>
+              </div>
+
+              <div class="step-nav-actions">
+                <span></span>
+                <button type="button" class="btn btn-primary" data-action="next-step">
+                  <span>Continue to Event Details</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2: EVENT DETAILS -->
+            <div class="checkout-step-panel" data-step="2" hidden>
+              <h2 class="step-panel-title">2. Specify Your Event Requirements</h2>
+              <p class="step-panel-desc">Help us understand the spatial and operational requirements of your gathering.</p>
+
+              <div class="form-field-group">
+                <label for="event-name" class="field-label">Event or Summit Title *</label>
+                <input type="text" id="event-name" class="field-input" placeholder="Annual Global Leadership Summit 2026" required>
+              </div>
+
+              <div class="form-grid-2col">
+                <div class="form-field-group">
+                  <label for="event-type" class="field-label">Event Category *</label>
+                  <select id="event-type" class="field-select">
+                    <option value="Corporate Conference" selected>Corporate Conference / Summit</option>
+                    <option value="Board Meeting">Board Meeting / Executive Retreat</option>
+                    <option value="Product Launch">Product Launch / Keynote</option>
+                    <option value="Corporate Gala">Corporate Gala / Milestone Celebration</option>
+                    <option value="Workshop">Technical Workshop / Seminar</option>
+                  </select>
+                </div>
+
+                <div class="form-field-group">
+                  <label for="event-attendees" class="field-label">Expected Attendee Count *</label>
+                  <input type="number" id="event-attendees" class="field-input" min="5" max="2500" value="120" required>
+                </div>
+              </div>
+
+              <div class="form-grid-2col">
+                <div class="form-field-group">
+                  <label for="event-date" class="field-label">Preferred Date *</label>
+                  <input type="date" id="event-date" class="field-input" required>
+                </div>
+
+                <div class="form-field-group">
+                  <label for="event-alt-date" class="field-label">Alternative Date (Optional)</label>
+                  <input type="date" id="event-alt-date" class="field-input">
+                </div>
+              </div>
+
+              <div class="form-grid-2col">
+                <div class="form-field-group">
+                  <label for="event-city" class="field-label">Preferred City / Region *</label>
+                  <input type="text" id="event-city" class="field-input" value="Mumbai" placeholder="Mumbai, Bengaluru, Delhi NCR, etc.">
+                </div>
+
+                <div class="form-field-group">
+                  <label for="event-venue-pref" class="field-label">Preferred Venue Style or Specific Venue</label>
+                  <input type="text" id="event-venue-pref" class="field-input" placeholder="e.g. Grand Conference Hall or Glass Pavilion">
+                </div>
+              </div>
+
+              <div class="form-field-group">
+                <label class="field-label">Supplementary Service Add-ons</label>
+                <div class="addons-checkbox-grid">
+                  <label class="addon-card-check">
+                    <input type="checkbox" name="addons" value="Gourmet Catering & Dining" checked>
+                    <div>
+                      <span class="addon-title">Catering &amp; Hospitality</span>
+                      <span class="addon-sub">Executive breaks &amp; lunch</span>
+                    </div>
+                  </label>
+
+                  <label class="addon-card-check">
+                    <input type="checkbox" name="addons" value="Full AV & Production Support" checked>
+                    <div>
+                      <span class="addon-title">Audio-Visual Support</span>
+                      <span class="addon-sub">Microphones, LED &amp; sound</span>
+                    </div>
+                  </label>
+
+                  <label class="addon-card-check">
+                    <input type="checkbox" name="addons" value="Breakout Rooms Coordination">
+                    <div>
+                      <span class="addon-title">Breakout Rooms</span>
+                      <span class="addon-sub">Dedicated workshop rooms</span>
+                    </div>
+                  </label>
+
+                  <label class="addon-card-check">
+                    <input type="checkbox" name="addons" value="VIP Speaker Hospitality">
+                    <div>
+                      <span class="addon-title">Speaker &amp; VIP Green Room</span>
+                      <span class="addon-sub">Dignitary protocol support</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-field-group">
+                <label for="event-notes" class="field-label">Additional Logistical Notes</label>
+                <textarea id="event-notes" class="field-textarea" placeholder="Specific technical requirements, stage dimensions, schedule preferences, or translation needs..."></textarea>
+              </div>
+
+              <div class="step-nav-actions">
+                <button type="button" class="btn btn-outline-light" data-action="prev-step">Back</button>
+                <button type="button" class="btn btn-primary" data-action="next-step">
+                  <span>Continue to Customer Info</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 3: CUSTOMER DETAILS -->
+            <div class="checkout-step-panel" data-step="3" hidden>
+              <h2 class="step-panel-title">3. Contact &amp; Organization Details</h2>
+              <p class="step-panel-desc">Where should our corporate coordinator deliver your event proposal?</p>
+
+              <div class="form-grid-2col">
+                <div class="form-field-group">
+                  <label for="cust-name" class="field-label">Full Name *</label>
+                  <input type="text" id="cust-name" class="field-input" placeholder="Eleanor Vance" required>
+                </div>
+
+                <div class="form-field-group">
+                  <label for="cust-company" class="field-label">Company / Organization</label>
+                  <input type="text" id="cust-company" class="field-input" placeholder="Vance Global Enterprise">
+                </div>
+              </div>
+
+              <div class="form-grid-2col">
+                <div class="form-field-group">
+                  <label for="cust-email" class="field-label">Corporate Email Address *</label>
+                  <input type="email" id="cust-email" class="field-input" placeholder="e.vance@enterprise.com" required>
+                </div>
+
+                <div class="form-field-group">
+                  <label for="cust-phone" class="field-label">Contact Phone Number *</label>
+                  <input type="tel" id="cust-phone" class="field-input" placeholder="+91 98765 43210" required>
+                </div>
+              </div>
+
+              <div class="step-nav-actions">
+                <button type="button" class="btn btn-outline-light" data-action="prev-step">Back</button>
+                <button type="button" class="btn btn-primary" data-action="next-step">
+                  <span>Review Summary</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 4: REVIEW & CONFIRM -->
+            <div class="checkout-step-panel" data-step="4" hidden>
+              <h2 class="step-panel-title">4. Review Your Enquiry Summary</h2>
+              <p class="step-panel-desc">Confirm your requirements before submitting to our coordination team.</p>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                <h4 style="font-family: var(--font-heading); color: var(--gold-primary); margin: 0 0 0.5rem 0; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">Selected Package</h4>
+                <div id="review-pkg-name" style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem;">Professional (Custom Quote)</div>
+
+                <h4 style="font-family: var(--font-heading); color: var(--gold-primary); margin: 0 0 0.5rem 0; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">Event Specifications</h4>
+                <div id="review-event-details" style="font-size: 0.9125rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;"></div>
+
+                <h4 style="font-family: var(--font-heading); color: var(--gold-primary); margin: 0 0 0.5rem 0; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">Primary Contact</h4>
+                <div id="review-customer-details" style="font-size: 0.9125rem; color: var(--text-secondary); line-height: 1.6;"></div>
+              </div>
+
+              <div style="margin-bottom: 1.75rem;">
+                <label class="checkbox-label" style="align-items: flex-start; font-size: 0.875rem;">
+                  <input type="checkbox" id="review-terms-checkbox" class="form-checkbox" checked required style="margin-top: 3px;">
+                  <span>I confirm these event requirements are accurate and authorize VENORA coordinators to place provisional date holds with participating venues.</span>
+                </label>
+              </div>
+
+              <div class="step-nav-actions">
+                <button type="button" class="btn btn-outline-light" data-action="prev-step">Back</button>
+                <button type="button" class="btn btn-primary" id="submit-enquiry-btn">
+                  <span>Submit Booking Enquiry</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Sticky Summary Sidebar -->
+          <aside class="order-summary-sidebar" id="checkout-sidebar" aria-label="Booking enquiry overview">
+            <h3 class="summary-heading">
+              <span>Enquiry Summary</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </h3>
+
+            <div class="summary-selected-pkg">
+              <div class="summary-pkg-name" id="summary-pkg-name">Professional Plan</div>
+              <div class="summary-pkg-tagline" id="summary-pkg-tagline">Conferences &amp; multi-track summits</div>
+              <div class="summary-pkg-status" id="summary-pkg-price">Custom Quote</div>
+            </div>
+
+            <ul class="summary-breakdown-list">
+              <li class="summary-row">
+                <span>Event Date:</span>
+                <span id="summary-event-date" style="font-weight: 600; color: var(--text-primary);">TBD</span>
+              </li>
+              <li class="summary-row">
+                <span>Delegates:</span>
+                <span id="summary-attendees" style="font-weight: 600; color: var(--text-primary);">120 Delegates</span>
+              </li>
+              <li class="summary-row">
+                <span>Coordination Scope:</span>
+                <span style="font-weight: 600; color: var(--text-primary);">Full Milestone Plan</span>
+              </li>
+              <li class="summary-row total-row">
+                <span>Estimated Value:</span>
+                <span class="summary-total-val">Quote on Review</span>
+              </li>
+            </ul>
+
+            <div class="summary-security-badge">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold-primary); flex-shrink: 0;" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>Encrypted corporate enquiry. You will receive a verified coordinator assignment within 24 hours.</span>
+            </div>
+          </aside>
+
+        </div>
+
+        <!-- Full-Width Confirmation View (Step 5, shown after submission) -->
+        <div class="checkout-form-card booking-confirmed-card" id="checkout-confirmation-view" hidden>
+          <div class="confirm-success-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+
+          <h2 style="font-family: var(--font-heading); font-size: 2.1rem; color: var(--text-primary); margin: 0 0 0.5rem 0;">
+            Enquiry Submitted Successfully
+          </h2>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 580px; margin: 0 auto 1.5rem auto; line-height: 1.6;">
+            Your corporate event specifications have been received by the VENORA planning desk.
+          </p>
+
+          <div>
+            <span style="font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-secondary); display: block; margin-bottom: 0.35rem;">Unique Enquiry Reference</span>
+            <div class="confirm-ref-badge" id="confirm-ref-number">VEN-2026-948271</div>
+          </div>
+
+          <p id="confirm-event-summary" style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 2rem;"></p>
+
+          <div class="confirm-next-steps">
+            <h4>What Happens Next:</h4>
+            <ol>
+              <li>A dedicated VENORA Senior Coordinator will review your spatial criteria and verify current venue calendar availability.</li>
+              <li>Within 24 business hours, you will receive an itemized proposal with verified venue date holds and pricing milestones.</li>
+              <li>A private walkthrough or technical review call will be scheduled at your convenience.</li>
+            </ol>
+          </div>
+
+          <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap; margin-top: 2rem;">
+            <button type="button" class="btn btn-outline-light" onclick="window.print();">Print / Save Summary</button>
+            <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer Mount Point -->
+  <div id="footer-mount"></div>
+
+  <!-- Centralized Data, Shared Components & Checkout Script -->
+  <script src="js/data/services.js"></script>
+  <script src="js/data/pricing.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+
+</html>

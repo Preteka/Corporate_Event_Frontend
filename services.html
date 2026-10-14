@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="assets/logo/venora-favicon.png" sizes="120x119">
+
+  <title>Corporate Event Services | VENORA Events &amp; Venues</title>
+  <meta name="description"
+    content="Explore VENORA's six core corporate event services: venue discovery, event planning, conference coordination, catering add-ons, reservation support, and booking management.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Corporate Event Services | VENORA Events &amp; Venues">
+  <meta property="og:description"
+    content="From discovering the right venue to coordinating the details, explore services designed to make planning your next event more organized and seamless.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/services.css">
+
+  <!-- Theme Script: Runs immediately to prevent flash of unstyled theme -->
+  <script src="js/theme.js"></script>
+</head>
+
+<body>
+  <!-- Accessible Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Navbar Mount Point -->
+  <div id="navbar-mount"></div>
+
+  <!-- Main Landmark -->
+  <main id="main-content">
+
+    <!-- ====================================================================
+         SECTION A: SERVICES HERO
+         ==================================================================== -->
+    <section class="services-hero-section" id="services-hero" aria-label="Services Overview Header">
+      <div class="services-hero-glow" aria-hidden="true"></div>
+      <div class="container services-hero-container">
+        <!-- Hero Text Column -->
+        <div class="services-hero-text">
+          <div class="section-eyebrow services-hero-eyebrow reveal-on-scroll">WHAT WE OFFER</div>
+          <h1 class="services-hero-title reveal-on-scroll stagger-1">
+            Everything You Need for a Remarkable Event
+          </h1>
+          <p class="services-hero-desc reveal-on-scroll stagger-2">
+            From discovering the right venue to coordinating the details, explore services designed to make planning your next event more organized and seamless.
+          </p>
+          <div class="services-hero-actions reveal-on-scroll stagger-3">
+            <a href="#services-grid" class="btn btn-primary" id="hero-explore-btn">
+              <span>Explore Our Services</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </a>
+            <a href="pricing.html" class="btn btn-outline-light" id="hero-pricing-btn">
+              <span>View Pricing</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="services-hero-visual reveal-on-scroll stagger-2">
+          <div class="services-hero-img-wrap">
+            <img src="assets/images/service-conference.jpg" alt="Executive corporate presentation auditorium"
+              class="services-hero-img">
+            <div class="services-hero-overlay" aria-hidden="true"></div>
+            <div class="services-hero-badge" aria-hidden="true">
+              <span class="badge-dot"></span>
+              <span class="badge-text">6 Core Offerings</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION B: CATEGORY & FILTER BAR
+         ==================================================================== -->
+    <section class="services-filter-section" id="services-filter" aria-label="Filter Services by Category">
+      <div class="container filter-bar-container">
+        <div class="filter-pills-list" role="tablist" aria-label="Service Categories">
+          <button type="button" class="filter-pill-btn is-active" data-category="All Services" role="tab"
+            aria-selected="true" aria-controls="services-grid-container" id="filter-tab-all">
+            <span>All Services</span>
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="Venue Discovery" role="tab"
+            aria-selected="false" aria-controls="services-grid-container" id="filter-tab-discovery">
+            <span>Venue Discovery</span>
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="Event Planning" role="tab"
+            aria-selected="false" aria-controls="services-grid-container" id="filter-tab-planning">
+            <span>Event Planning</span>
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="Event Support" role="tab"
+            aria-selected="false" aria-controls="services-grid-container" id="filter-tab-support">
+            <span>Event Support</span>
+          </button>
+        </div>
+        <div class="filter-counter" id="filter-counter-text" aria-live="polite">
+          Showing 6 of 6 services
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION C: SIX-SERVICE GALLERY GRID
+         ==================================================================== -->
+    <section class="services-gallery-section" id="services-grid" aria-label="VENORA Services Catalog">
+      <div class="container">
+        <!-- Rendered dynamically by js/services.js -->
+        <div class="services-grid" id="services-grid-container" role="region" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION D: WHY CHOOSE VENORA
+         ==================================================================== -->
+    <section class="services-why-section" id="why-choose-services" aria-label="Why Choose VENORA Services">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-eyebrow">THE VENORA DIFFERENCE</div>
+          <h2 class="section-title">Built Around Practical Corporate Planning</h2>
+          <p class="section-desc">
+            We simplify complex event arrangements into reliable milestones with spatial clarity and dedicated coordination.
+          </p>
+        </div>
+
+        <div class="why-pillars-grid">
+          <!-- Pillar 1 -->
+          <div class="why-pillar-card reveal-on-scroll stagger-1">
+            <div class="pillar-number">01</div>
+            <h3 class="pillar-title">Thoughtful Venue Discovery</h3>
+            <p class="pillar-desc">
+              Carefully vetted spaces matched to your delegation size, technical acoustic demands, and preferred architectural atmosphere.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="why-pillar-card reveal-on-scroll stagger-2">
+            <div class="pillar-number">02</div>
+            <h3 class="pillar-title">Clear Planning Details</h3>
+            <p class="pillar-desc">
+              Structured milestone roadmaps, vendor checklists, and synchronized schedules that eliminate logistical ambiguity.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="why-pillar-card reveal-on-scroll stagger-3">
+            <div class="pillar-number">03</div>
+            <h3 class="pillar-title">Organized Booking Experience</h3>
+            <p class="pillar-desc">
+              Transparent contract reviews, date hold management, and consolidated communications from initial search to post-event settlement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION E: PROCESS PREVIEW
+         ==================================================================== -->
+    <section class="services-process-section" id="process-preview" aria-label="Customer Journey Process">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-eyebrow">YOUR JOURNEY</div>
+          <h2 class="section-title">How the Planning Process Works</h2>
+          <p class="section-desc">
+            A clear, four-step sequence designed to take your event from concept to flawless execution.
+          </p>
+        </div>
+
+        <div class="process-steps-row">
+          <!-- Step 1 -->
+          <div class="process-step-item reveal-on-scroll stagger-1">
+            <div class="process-step-num">01</div>
+            <h3 class="process-step-title">Explore Services</h3>
+            <p class="process-step-desc">
+              Review our specialized corporate offerings and identify the support needed for your gathering.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-item reveal-on-scroll stagger-2">
+            <div class="process-step-num">02</div>
+            <h3 class="process-step-title">Choose a Suitable Option</h3>
+            <p class="process-step-desc">
+              Select a transparent package tier or request a custom combination tailored to your delegation.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-item reveal-on-scroll stagger-3">
+            <div class="process-step-num">03</div>
+            <h3 class="process-step-title">Share Event Requirements</h3>
+            <p class="process-step-desc">
+              Submit attendee numbers, date options, seating layout preferences, and audio-visual needs.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step-item reveal-on-scroll stagger-4">
+            <div class="process-step-num">04</div>
+            <h3 class="process-step-title">Review Your Booking</h3>
+            <p class="process-step-desc">
+              Confirm venue holds, finalized schedules, and milestone roadmaps with your assigned coordinator.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION F: FINAL CALL TO ACTION
+         ==================================================================== -->
+    <section class="services-final-cta" id="services-cta" aria-label="Call to Action">
+      <div class="services-cta-bg" aria-hidden="true">
+        <img src="assets/images/cta-venue.jpg" alt="Illuminated glass architectural venue pavilion" class="services-cta-img">
+        <div class="services-cta-overlay"></div>
+      </div>
+      <div class="container services-cta-content">
+        <div class="services-cta-eyebrow reveal-on-scroll">GET STARTED TODAY</div>
+        <h2 class="services-cta-title reveal-on-scroll stagger-1">
+          Let's Plan Your Next Event
+        </h2>
+        <p class="services-cta-desc reveal-on-scroll stagger-2">
+          Find the right service and take the next step toward your event with confidence and clarity.
+        </p>
+        <div class="services-cta-actions reveal-on-scroll stagger-3">
+          <a href="pricing.html" class="btn btn-primary" id="cta-pricing-btn">
+            <span>Explore Pricing</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="checkout.html?package=custom" class="btn btn-outline-light" id="cta-contact-btn">
+            <span>Contact VENORA</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer Mount Point -->
+  <div id="footer-mount"></div>
+
+  <!-- Centralized Service Data & Component Scripts -->
+  <script src="js/data/services.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/services.js"></script>
+</body>
+
+</html>

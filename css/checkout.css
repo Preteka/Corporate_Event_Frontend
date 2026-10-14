@@ -1,0 +1,462 @@
+/* ==========================================================================
+   VENORA - Checkout & Booking Flow Stylesheet (checkout.css)
+   Complements style.css, navbar.css, footer.css
+   Multi-step stepper, summary sidebar, responsive form layouts
+   ========================================================================== */
+
+.checkout-page-section {
+  position: relative;
+  padding-block-start: clamp(6.5rem, 9vw, 8.5rem);
+  padding-block-end: clamp(4rem, 6vw, 6rem);
+  background-color: var(--bg-primary);
+  transition: background-color var(--transition-normal);
+}
+
+.checkout-header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+}
+
+.checkout-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.65rem 0;
+  letter-spacing: -0.02em;
+}
+
+.checkout-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Stepper Progress Indicator */
+.stepper-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 1.5vw, 1.5rem);
+  max-width: 840px;
+  margin-inline: auto;
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-inline: 1rem;
+}
+
+.stepper-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.stepper-step {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.stepper-step.is-active {
+  color: var(--gold-primary);
+}
+
+.stepper-step.is-completed {
+  color: var(--text-primary);
+}
+
+.step-num-bubble {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.stepper-step.is-active .step-num-bubble {
+  background-color: var(--gold-primary);
+  border-color: var(--gold-primary);
+  color: #101522;
+  box-shadow: 0 4px 12px rgba(197, 161, 91, 0.3);
+}
+
+.stepper-step.is-completed .step-num-bubble {
+  background-color: var(--gold-tint);
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+}
+
+.stepper-divider {
+  width: 30px;
+  height: 1px;
+  background-color: var(--border-color);
+  flex-shrink: 0;
+}
+
+/* 2-Column Main Layout: Form (Left) & Summary (Right) */
+.checkout-layout-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  align-items: flex-start;
+}
+
+/* Form Container Card */
+.checkout-form-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.85rem, 3vw, 2.75rem);
+  box-shadow: var(--card-shadow);
+}
+
+.step-panel-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.step-panel-desc {
+  font-size: 0.9125rem;
+  color: var(--text-secondary);
+  margin: 0 0 2rem 0;
+}
+
+/* Step 1: Package Selection Cards inside Form */
+.package-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.package-option-card {
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  background-color: var(--bg-secondary);
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.package-option-card:hover {
+  border-color: var(--gold-primary);
+}
+
+.package-option-card.is-selected {
+  border-color: var(--gold-primary);
+  background-color: var(--surface-card);
+  box-shadow: 0 6px 18px var(--gold-tint);
+}
+
+.opt-card-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.35rem 0;
+}
+
+.opt-card-price {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin: 0 0 0.75rem 0;
+}
+
+.opt-card-desc {
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Form Fields */
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.field-label {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.field-input,
+.field-select,
+.field-textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.field-input:focus,
+.field-select:focus,
+.field-textarea:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px var(--gold-tint);
+}
+
+.field-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Checkbox Grid for Add-ons */
+.addons-checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.addon-card-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.addon-card-check input {
+  margin-top: 3px;
+  accent-color: var(--gold-primary);
+}
+
+.addon-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+
+.addon-sub {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+}
+
+/* Stepper Navigation Buttons */
+.step-nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Order Summary Sticky Sidebar */
+.order-summary-sidebar {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  box-shadow: var(--card-shadow);
+  position: sticky;
+  top: calc(var(--nav-height, 64px) + 2rem);
+  border-top: 3.5px solid var(--gold-primary);
+}
+
+.summary-heading {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary-selected-pkg {
+  padding: 1.15rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-color);
+}
+
+.summary-pkg-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.35rem 0;
+}
+
+.summary-pkg-tagline {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem 0;
+}
+
+.summary-pkg-status {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.summary-breakdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.summary-row.total-row {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.summary-total-val {
+  color: var(--gold-primary);
+}
+
+.summary-security-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Step 5: Confirmation / Success State */
+.booking-confirmed-card {
+  text-align: center;
+  padding: clamp(2.5rem, 5vw, 4rem) 2rem;
+}
+
+.confirm-success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--gold-tint);
+  color: var(--gold-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.confirm-ref-badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin-bottom: 1.5rem;
+}
+
+.confirm-next-steps {
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: start;
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.confirm-next-steps h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin: 0 0 0.85rem 0;
+  color: var(--text-primary);
+}
+
+.confirm-next-steps ol {
+  padding-inline-start: 1.25rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.8875rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .checkout-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .order-summary-sidebar {
+    position: static;
+  }
+  .package-options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .form-grid-2col {
+    grid-template-columns: 1fr;
+  }
+  .addons-checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+  .step-nav-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .step-nav-actions .btn {
+    width: 100%;
+  }
+}

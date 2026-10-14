@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="assets/logo/venora-favicon.png" sizes="120x119">
+
+  <title>Article Details | The VENORA Journal</title>
+  <meta name="description"
+    content="Read detailed event planning guidance, spatial layout ideas, and venue selection insights from the VENORA Editorial Team.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="The VENORA Journal | Article Details">
+  <meta property="og:description"
+    content="Practical insights and guidance for premier corporate gatherings.">
+  <meta property="og:type" content="article">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="css/blog-details.css">
+
+  <!-- Theme Script: Immediate execution prevents flash of unstyled theme -->
+  <script src="js/theme.js"></script>
+</head>
+
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar" id="reading-progress" aria-hidden="true"></div>
+
+  <!-- Accessible Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Navbar Mount Point -->
+  <div id="navbar-mount"></div>
+
+  <!-- Main Landmark -->
+  <main id="main-content">
+
+    <!-- Not Found State (shown if slug parameter is invalid) -->
+    <div class="container" id="article-not-found-view" hidden>
+      <div class="article-not-found">
+        <div class="section-eyebrow">ARTICLE NOT FOUND</div>
+        <h1 class="not-found-title">We couldn't find that article</h1>
+        <p class="not-found-desc">
+          The article you are looking for may have been moved, renamed, or is currently unavailable. Please browse our complete editorial collection.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="blog.html" class="btn btn-primary">Browse All Articles</a>
+          <a href="index.html" class="btn btn-outline-light">Return to Home</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Article Content View -->
+    <div id="article-loaded-view">
+      <!-- ====================================================================
+           SECTION A: ARTICLE HEADER
+           ==================================================================== -->
+      <section class="article-header-section" id="article-header" aria-label="Article Header">
+        <div class="container article-header-container">
+          <!-- Breadcrumbs -->
+          <nav class="article-breadcrumbs reveal-on-scroll" aria-label="Breadcrumbs">
+            <a href="index.html">Home</a>
+            <span class="crumb-separator" aria-hidden="true">/</span>
+            <a href="blog.html">Journal</a>
+            <span class="crumb-separator" aria-hidden="true">/</span>
+            <span class="crumb-current" id="article-crumb-title" aria-current="page">Article</span>
+          </nav>
+
+          <span class="article-category-badge reveal-on-scroll" id="article-category-label">Category</span>
+          <h1 class="article-title reveal-on-scroll stagger-1" id="article-title-text">
+            Article Title Placeholder
+          </h1>
+          <p class="article-lead-excerpt reveal-on-scroll stagger-2" id="article-lead-text">
+            Article excerpt summary placeholder.
+          </p>
+
+          <!-- Author and Publishing Meta Bar -->
+          <div class="article-author-bar reveal-on-scroll stagger-3">
+            <div class="author-profile-left">
+              <img src="assets/logo/venora-favicon.png" alt="" class="author-bar-avatar" id="author-avatar-img">
+              <div class="author-bar-text">
+                <span class="author-bar-name" id="author-name-text">Author Name</span>
+                <span class="author-bar-role" id="author-role-text">Event Planning Insights</span>
+              </div>
+            </div>
+            <div class="article-meta-right">
+              <time id="article-date-text" datetime="2026-10-01">Date</time>
+              <span class="article-meta-dot" aria-hidden="true">&bull;</span>
+              <span id="article-reading-time-text">6 min read</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION B & C & D: COVER, BODY & SIDEBAR
+           ==================================================================== -->
+      <section class="article-main-section" aria-label="Article Content">
+        <div class="container article-layout-container">
+          <!-- Left Column: Cover Image & Article Body -->
+          <div class="article-primary-column">
+            <!-- Cover Image -->
+            <div class="article-cover-wrap reveal-on-scroll">
+              <img src="" alt="" class="article-cover-img" id="article-cover-image">
+            </div>
+
+            <!-- Dynamic Structured Body Content -->
+            <div class="article-body-content" id="article-body-container">
+              <!-- Rendered dynamically by js/blog-details.js -->
+            </div>
+
+            <!-- Tags -->
+            <div class="article-tags-row" id="article-tags-container">
+              <span class="tags-label">Tags:</span>
+              <!-- Populated dynamically -->
+            </div>
+
+            <!-- Author Biography Card -->
+            <div class="article-author-card reveal-on-scroll" id="author-bio-card">
+              <img src="assets/logo/venora-favicon.png" alt="" class="author-card-avatar" id="author-card-img">
+              <div class="author-card-content">
+                <h3 class="author-card-name" id="author-card-name">VENORA Editorial Team</h3>
+                <span class="author-card-role" id="author-card-role">Event Planning Insights</span>
+                <p class="author-card-bio" id="author-card-bio">
+                  The VENORA Editorial Team shares practical guidance on venue selection, spatial design, and seamless execution for premium corporate gatherings.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Sidebar (Desktop) -->
+          <aside class="article-sidebar" aria-label="Journal Sidebar">
+            <!-- Search Widget -->
+            <div class="sidebar-widget">
+              <h3 class="sidebar-widget-title">Search Journal</h3>
+              <form class="sidebar-search-form" id="sidebar-search-form" action="blog.html" method="get">
+                <svg class="sidebar-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="search" name="q" class="sidebar-search-input" placeholder="Search articles..."
+                  aria-label="Search articles in journal">
+              </form>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="sidebar-widget">
+              <h3 class="sidebar-widget-title">Categories</h3>
+              <ul class="sidebar-category-list" id="sidebar-categories-list">
+                <!-- Populated dynamically by js/blog-details.js -->
+              </ul>
+            </div>
+
+            <!-- Recent Articles Widget -->
+            <div class="sidebar-widget">
+              <h3 class="sidebar-widget-title">Recent Articles</h3>
+              <ul class="sidebar-recent-list" id="sidebar-recent-list">
+                <!-- Populated dynamically by js/blog-details.js -->
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION F: RELATED POSTS
+           ==================================================================== -->
+      <section class="article-related-section" id="article-related" aria-label="Related Articles">
+        <div class="container">
+          <div class="section-header text-center reveal-on-scroll">
+            <div class="section-eyebrow">CONTINUE READING</div>
+            <h2 class="section-title">Related Editorial Guides</h2>
+            <p class="section-desc">
+              Explore more insights and checklists tailored to corporate gatherings.
+            </p>
+          </div>
+
+          <div class="related-posts-grid" id="related-posts-container">
+            <!-- Populated dynamically by js/blog-details.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION G: ARTICLE CTA
+           ==================================================================== -->
+      <section class="article-cta-section" id="article-cta" aria-label="Plan Your Event CTA">
+        <div class="article-cta-bg" aria-hidden="true">
+          <img src="assets/images/cta-venue.jpg" alt="Illuminated glass architectural venue pavilion" class="article-cta-img">
+          <div class="article-cta-overlay"></div>
+        </div>
+        <div class="container article-cta-content">
+          <div class="article-cta-eyebrow reveal-on-scroll">TAILORED SUPPORT</div>
+          <h2 class="article-cta-title reveal-on-scroll stagger-1">
+            Planning Your Next Corporate Event?
+          </h2>
+          <p class="article-cta-desc reveal-on-scroll stagger-2">
+            Explore VENORA's services to organize your venue search and event requirements.
+          </p>
+          <div class="article-cta-actions reveal-on-scroll stagger-3">
+            <a href="services.html" class="btn btn-primary" id="article-cta-explore-services">
+              <span>Explore Services</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="contact.html" class="btn btn-outline-light" id="article-cta-contact-btn">
+              <span>Contact VENORA</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Shared Footer Mount Point -->
+  <div id="footer-mount"></div>
+
+  <!-- Centralized Data & Script Assets -->
+  <script src="js/data/blogs.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/blog-details.js"></script>
+</body>
+
+</html>

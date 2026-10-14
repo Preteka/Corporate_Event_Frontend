@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="assets/logo/venora-favicon.png" sizes="120x119">
+
+  <title>Create Account | VENORA Events &amp; Venues</title>
+  <meta name="description" content="Register your VENORA account to organize corporate event enquiries, coordinate venue details, and track planning milestones.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Create Account | VENORA Events &amp; Venues">
+  <meta property="og:description" content="Register your account to organize corporate event enquiries and booking details.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/auth.css">
+
+  <!-- Theme Script: Runs immediately to prevent flash of unstyled theme -->
+  <script src="js/theme.js"></script>
+</head>
+
+<body>
+  <!-- Accessible Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Navbar Mount Point -->
+  <div id="navbar-mount"></div>
+
+  <!-- Main Landmark -->
+  <main id="main-content">
+    <section class="auth-page-section" aria-label="Account Registration Portal">
+      <div class="auth-bg-glow" aria-hidden="true"></div>
+
+      <div class="auth-card-container">
+        <div class="auth-card">
+          <div class="auth-card-header">
+            <a href="index.html" class="auth-brand-logo" aria-label="VENORA Home">
+              <img src="assets/logo/logo.png" alt="VENORA Events &amp; Venues" width="160" height="54">
+            </a>
+            <h1 class="auth-title">Create Account</h1>
+            <p class="auth-subtitle">Organize your event enquiries and booking details.</p>
+          </div>
+
+          <!-- Alert Notification Box -->
+          <div id="auth-alert" class="auth-alert-banner" role="alert" hidden></div>
+
+          <!-- Sign Up Form -->
+          <form id="signup-form" class="auth-form" novalidate>
+            <div class="form-group">
+              <label for="signup-name" class="form-label">Full Name</label>
+              <div class="form-input-wrap">
+                <input type="text" id="signup-name" name="fullname" class="form-input" placeholder="Eleanor Vance" required autocomplete="name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="signup-email" class="form-label">Corporate Email</label>
+              <div class="form-input-wrap">
+                <input type="email" id="signup-email" name="email" class="form-input" placeholder="e.vance@enterprise.com" required autocomplete="email">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="signup-phone" class="form-label">Phone Number (Optional)</label>
+              <div class="form-input-wrap">
+                <input type="tel" id="signup-phone" name="phone" class="form-input" placeholder="+91 98765 43210" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="signup-password" class="form-label">Password</label>
+              <div class="form-input-wrap has-toggle">
+                <input type="password" id="signup-password" name="password" class="form-input" placeholder="At least 6 characters" required autocomplete="new-password">
+                <button type="button" class="password-toggle-btn" data-toggle="password" data-target="signup-password" aria-label="Show password">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="signup-confirm-password" class="form-label">Confirm Password</label>
+              <div class="form-input-wrap has-toggle">
+                <input type="password" id="signup-confirm-password" name="confirm_password" class="form-input" placeholder="Confirm password" required autocomplete="new-password">
+                <button type="button" class="password-toggle-btn" data-toggle="password" data-target="signup-confirm-password" aria-label="Show password">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-row-utility">
+              <label class="checkbox-label">
+                <input type="checkbox" name="terms" class="form-checkbox" required checked>
+                <span>I agree to VENORA terms &amp; privacy policies</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary auth-submit-btn" id="signup-submit-btn">
+              <span>Create VENORA Account</span>
+            </button>
+          </form>
+
+          <div class="auth-card-footer">
+            <span>Already have an account?</span>
+            <a href="login.html" id="link-to-login">Sign In</a>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="index.html" class="auth-back-link">
+            <span aria-hidden="true">&larr;</span>
+            <span>Return to VENORA Home</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer Mount Point -->
+  <div id="footer-mount"></div>
+
+  <!-- Shared Component Loader & Auth Script -->
+  <script src="js/components.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="assets/logo/venora-favicon.png" sizes="120x119">
+
+  <title>Service Details | VENORA Events &amp; Venues</title>
+  <meta name="description" content="Explore detailed specifications, workflows, spatial planning features, and pricing for VENORA corporate event services.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Service Details | VENORA Events &amp; Venues">
+  <meta property="og:description" content="Explore comprehensive specifications and workflows for VENORA corporate event services.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/service-details.css">
+
+  <!-- Theme Script: Runs immediately to prevent flash of unstyled theme -->
+  <script src="js/theme.js"></script>
+</head>
+
+<body>
+  <!-- Accessible Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Navbar Mount Point -->
+  <div id="navbar-mount"></div>
+
+  <!-- Main Landmark -->
+  <main id="main-content">
+
+    <!-- Not Found State (shown if service slug is invalid) -->
+    <section class="details-hero-section" id="service-not-found" hidden aria-label="Service Not Found">
+      <div class="container" style="text-align: center; padding-block: 4rem 3rem;">
+        <div class="section-eyebrow">NOTICE</div>
+        <h1 class="details-hero-title">Service Not Found</h1>
+        <p class="details-hero-desc" style="max-width: 540px; margin-inline: auto;">
+          The requested service could not be located in our catalog. Please explore our complete offerings.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
+          <a href="services.html" class="btn btn-primary">Browse All Services</a>
+          <a href="index.html" class="btn btn-outline-light">Return to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Root Container for Dynamic Content -->
+    <div id="service-details-root">
+
+      <!-- ====================================================================
+           SECTION A: SERVICE HERO & BREADCRUMBS
+           ==================================================================== -->
+      <section class="details-hero-section" id="details-hero" aria-label="Service Hero Header">
+        <div class="container">
+          <!-- Breadcrumbs -->
+          <nav class="details-breadcrumbs" aria-label="Breadcrumb navigation">
+            <ol class="breadcrumbs-list">
+              <li><a href="index.html">Home</a></li>
+              <li class="breadcrumb-separator" aria-hidden="true">/</li>
+              <li><a href="services.html">Services</a></li>
+              <li class="breadcrumb-separator" aria-hidden="true">/</li>
+              <li class="breadcrumb-current" id="crumb-current-service" aria-current="page">Service</li>
+            </ol>
+          </nav>
+
+          <div class="details-hero-grid">
+            <!-- Content Column -->
+            <div class="details-hero-content">
+              <span class="details-category-pill" id="service-cat-pill">Category</span>
+              <h1 class="details-hero-title" id="service-hero-title">Service Name</h1>
+              <p class="details-hero-desc" id="service-hero-desc">Service description goes here.</p>
+              <div class="details-hero-ctas">
+                <a href="checkout.html" class="btn btn-primary" id="service-primary-enquire-btn">
+                  <span>Enquire About This Service</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="pricing.html" class="btn btn-outline-light" id="service-view-pricing-btn">
+                  <span>View Pricing</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Visual Column -->
+            <div class="details-hero-visual">
+              <div class="details-hero-media-wrap">
+                <img src="" alt="" class="details-hero-img" id="service-hero-img">
+                <div class="details-hero-media-overlay" aria-hidden="true"></div>
+                <div class="details-media-badge" aria-hidden="true">
+                  <span class="badge-dot"></span>
+                  <span id="service-hero-badge">Verified Service</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION B: OVERVIEW & KEY BENEFITS
+           ==================================================================== -->
+      <section class="details-overview-section" id="details-overview" aria-label="Service Overview">
+        <div class="container details-overview-grid">
+          <div class="details-overview-text-col">
+            <div class="section-eyebrow">COMPREHENSIVE OVERVIEW</div>
+            <h2 class="section-title">What This Service Delivers</h2>
+            <p class="details-full-text" id="service-full-description">Full description here.</p>
+          </div>
+
+          <div class="details-benefits-col">
+            <div class="details-benefits-card">
+              <h3 class="benefits-card-title">Key Advantages</h3>
+              <ul class="details-benefits-list" id="service-benefits-list"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION C: KEY FEATURES
+           ==================================================================== -->
+      <section class="details-features-section" id="details-features" aria-label="Key Service Features">
+        <div class="container">
+          <div class="section-header text-center reveal-on-scroll">
+            <div class="section-eyebrow">CORE CAPABILITIES</div>
+            <h2 class="section-title">Designed for Corporate Excellence</h2>
+            <p class="section-desc">
+              Every detail is engineered to support seamless organizational flow, executive presentation, and attendee engagement.
+            </p>
+          </div>
+
+          <div class="features-grid-2x2" id="service-features-container"></div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION D: HOW THIS SERVICE WORKS (STEP SEQUENCE)
+           ==================================================================== -->
+      <section class="details-process-section" id="details-process" aria-label="Service Workflow Steps">
+        <div class="container">
+          <div class="section-header text-center reveal-on-scroll">
+            <div class="section-eyebrow">STEP-BY-STEP WORKFLOW</div>
+            <h2 class="section-title">How We Coordinate This Service</h2>
+            <p class="section-desc">
+              A transparent, structured timeline that ensures alignment across your planning committee, venue leads, and operational teams.
+            </p>
+          </div>
+
+          <div class="service-steps-grid" id="service-process-container"></div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION E: PRICING & SCOPE BANNER
+           ==================================================================== -->
+      <section class="details-pricing-section" id="details-pricing" aria-label="Pricing Scope">
+        <div class="container">
+          <div class="details-pricing-banner">
+            <div class="pricing-banner-text">
+              <div class="section-eyebrow">TRANSPARENT VALUE</div>
+              <h2 class="pricing-banner-title">Service Pricing &amp; Package Scope</h2>
+              <p class="pricing-banner-desc" id="service-pricing-desc">
+                Pricing details and package information will appear here.
+              </p>
+            </div>
+            <div class="pricing-banner-actions">
+              <a href="checkout.html" class="btn btn-primary" id="pricing-banner-enquire-btn">
+                <span>Start Service Enquiry</span>
+              </a>
+              <a href="pricing.html" class="btn btn-outline-light">
+                <span>Compare Packages</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION F: FREQUENTLY ASKED QUESTIONS
+           ==================================================================== -->
+      <section class="details-faqs-section" id="details-faqs" aria-label="Frequently Asked Questions">
+        <div class="container">
+          <div class="section-header text-center reveal-on-scroll">
+            <div class="section-eyebrow">QUESTIONS &amp; ANSWERS</div>
+            <h2 class="section-title">Common Enquiries About This Service</h2>
+            <p class="section-desc">
+              Clear answers to help you evaluate venue arrangements, scheduling milestones, and coordination boundaries.
+            </p>
+          </div>
+
+          <div class="faqs-container-narrow" id="service-faqs-container"></div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION G: RELATED SERVICES
+           ==================================================================== -->
+      <section class="details-related-section" id="details-related" aria-label="Related Corporate Services">
+        <div class="container">
+          <div class="section-header text-center reveal-on-scroll">
+            <div class="section-eyebrow">COMPLEMENTARY SUPPORT</div>
+            <h2 class="section-title">Explore Related Services</h2>
+            <p class="section-desc">
+              Coordinate multiple aspects of your event seamlessly through our connected corporate offerings.
+            </p>
+          </div>
+
+          <div class="related-services-grid" id="service-related-container"></div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION H: FINAL CALL TO ACTION
+           ==================================================================== -->
+      <section class="details-final-cta" id="details-cta" aria-label="Service Details Call to Action">
+        <div class="details-cta-bg" aria-hidden="true">
+          <img src="assets/images/cta-venue.jpg" alt="Illuminated glass architectural venue pavilion" class="details-cta-img">
+          <div class="details-cta-overlay"></div>
+        </div>
+        <div class="container details-cta-content">
+          <div class="details-cta-eyebrow reveal-on-scroll">TAKE THE NEXT STEP</div>
+          <h2 class="details-cta-title reveal-on-scroll stagger-1">
+            Ready to Explore This Service?
+          </h2>
+          <p class="details-cta-desc reveal-on-scroll stagger-2">
+            Submit your event details and collaborate with an experienced VENORA coordinator.
+          </p>
+          <div class="details-cta-actions reveal-on-scroll stagger-3">
+            <a href="checkout.html" class="btn btn-primary" id="final-enquire-btn">
+              <span>Start Your Enquiry</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="pricing.html" class="btn btn-outline-light">
+              <span>View All Pricing</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Shared Footer Mount Point -->
+  <div id="footer-mount"></div>
+
+  <!-- Centralized Service Data & Component Scripts -->
+  <script src="js/data/services.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/service-details.js"></script>
+</body>
+
+</html>

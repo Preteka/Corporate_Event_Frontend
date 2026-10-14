@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — VENORA Events &amp; Venues</title>
+  <meta name="description" content="Centralized management portal for VENORA venues, corporate services, pricing tiers, editorial articles, client enquiries, quotes, bookings, and financial settlements.">
+  <link rel="icon" type="image/png" href="../assets/logo/venora-favicon.png">
+
+  <!-- Google Fonts: Sora & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Admin Dashboard Dedicated Stylesheet -->
+  <link rel="stylesheet" href="css/admin-dashboard.css">
+
+  <!-- Theme & Direction Engine -->
+  <script src="../js/theme.js"></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- 1. Left Sidebar Navigation (14 Items) -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Admin Dashboard Navigation">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-brand" aria-label="VENORA Website Home">
+          <img src="../assets/logo/logo.png" alt="VENORA Events &amp; Venues" width="130" height="44">
+          <span class="brand-portal-tag">Admin</span>
+        </a>
+        <button type="button" class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close Sidebar Drawer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav-scroll" aria-label="Admin Navigation Menu">
+        <!-- Core Operations Group -->
+        <div class="nav-group">
+          <span class="nav-section-label">Core Operations</span>
+          <ul class="nav-list">
+            <li>
+              <a href="#overview" class="dash-nav-link is-active" data-section="overview" id="nav-overview">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                </span>
+                <span class="nav-text">Overview</span>
+              </a>
+            </li>
+            <li>
+              <a href="#venues" class="dash-nav-link" data-section="venues" id="nav-venues">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                  </svg>
+                </span>
+                <span class="nav-text">Venues</span>
+              </a>
+            </li>
+            <li>
+              <a href="#services" class="dash-nav-link" data-section="services" id="nav-services">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                </span>
+                <span class="nav-text">Services</span>
+              </a>
+            </li>
+            <li>
+              <a href="#pricing" class="dash-nav-link" data-section="pricing" id="nav-pricing">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </span>
+                <span class="nav-text">Pricing &amp; Packages</span>
+              </a>
+            </li>
+            <li>
+              <a href="#blogs" class="dash-nav-link" data-section="blogs" id="nav-blogs">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 20h9"></path>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                  </svg>
+                </span>
+                <span class="nav-text">Blog Management</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Event Workflow Group -->
+        <div class="nav-group">
+          <span class="nav-section-label">Event Workflow</span>
+          <ul class="nav-list">
+            <li>
+              <a href="#enquiries" class="dash-nav-link" data-section="enquiries" id="nav-enquiries">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                  </svg>
+                </span>
+                <span class="nav-text">Enquiries</span>
+              </a>
+            </li>
+            <li>
+              <a href="#quotes" class="dash-nav-link" data-section="quotes" id="nav-quotes">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                </span>
+                <span class="nav-text">Quotes</span>
+              </a>
+            </li>
+            <li>
+              <a href="#bookings" class="dash-nav-link" data-section="bookings" id="nav-bookings">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </span>
+                <span class="nav-text">Bookings</span>
+              </a>
+            </li>
+            <li>
+              <a href="#clients" class="dash-nav-link" data-section="clients" id="nav-clients">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </span>
+                <span class="nav-text">Clients</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Finance & Governance Group -->
+        <div class="nav-group">
+          <span class="nav-section-label">Finance &amp; Admin</span>
+          <ul class="nav-list">
+            <li>
+              <a href="#payments" class="dash-nav-link" data-section="payments" id="nav-payments">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                  </svg>
+                </span>
+                <span class="nav-text">Payments &amp; Invoices</span>
+              </a>
+            </li>
+            <li>
+              <a href="#reports" class="dash-nav-link" data-section="reports" id="nav-reports">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </span>
+                <span class="nav-text">Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="#notifications" class="dash-nav-link" data-section="notifications" id="nav-notifications">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                  </svg>
+                </span>
+                <span class="nav-text">Notifications</span>
+                <span class="nav-badge-pill" data-badge="admin-notifs-count" hidden>0</span>
+              </a>
+            </li>
+            <li>
+              <a href="#settings" class="dash-nav-link" data-section="settings" id="nav-settings">
+                <span class="nav-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                  </svg>
+                </span>
+                <span class="nav-text">Website Settings</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- 14. Sidebar Logout Button -->
+      <div class="sidebar-footer">
+        <button type="button" class="sidebar-logout-btn" id="sidebar-logout-btn" data-action="trigger-logout" title="Exit Admin Portal" aria-label="Log out of Admin Dashboard">
+          <span class="nav-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </span>
+          <span class="logout-text">Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- 2. Main Area (Sticky Topbar + Dynamic Canvas) -->
+    <div class="dashboard-main-area">
+      <header class="dashboard-topbar" role="banner">
+        <div class="topbar-left">
+          <button type="button" class="topbar-mobile-toggle" id="sidebar-mobile-toggle" aria-label="Open Navigation Drawer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+
+          <div class="topbar-breadcrumbs">
+            <span class="breadcrumb-path">
+              <span>VENORA</span>
+              <span aria-hidden="true">/</span>
+              <span id="dash-breadcrumb-current">Overview</span>
+            </span>
+            <h1 class="topbar-title" id="dash-topbar-title">Dashboard Overview</h1>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Demo Mode Pill -->
+          <div class="demo-mode-pill" title="Running in interactive demonstration preview">
+            <span class="demo-indicator-dot" aria-hidden="true"></span>
+            <span>Demo Mode</span>
+          </div>
+
+          <!-- Quick Search -->
+          <div class="topbar-search-box">
+            <span class="search-icon-pos" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" id="dash-quick-search" class="dash-search-input" placeholder="Quick search..." aria-label="Quick search records">
+          </div>
+
+          <!-- Notification Bell -->
+          <a href="#notifications" class="dash-control-btn" aria-label="View Operations Notifications" title="Notifications">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notif-badge" data-badge="admin-notifs-count" hidden>0</span>
+          </a>
+
+          <!-- Theme Toggle -->
+          <button type="button" class="dash-control-btn theme-toggle-btn" data-action="toggle-theme" aria-label="Toggle Theme" title="Toggle Theme (Light / Dark)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <!-- Direction Toggle -->
+          <button type="button" class="dash-control-btn dir-toggle-btn" data-action="toggle-dir" aria-label="Toggle Direction" title="Switch Direction (LTR / RTL)">
+            <span style="font-size: 0.6875rem; font-weight: 700; font-family: var(--font-body);">DIR</span>
+          </button>
+
+          <!-- Admin Avatar Pill -->
+          <a href="#settings" class="topbar-admin-pill" title="Administrator Profile &amp; Settings">
+            <div class="topbar-avatar-wrap">
+              <span>AD</span>
+              <span class="online-dot" aria-hidden="true"></span>
+            </div>
+            <div class="topbar-admin-info">
+              <span class="topbar-admin-name">Admin Concierge</span>
+              <span class="topbar-role-tag">Super Admin</span>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <!-- 3. Dynamic Section Canvas -->
+      <main class="dashboard-main-content" id="dashboard-main-content" role="main">
+        <!-- Rendered dynamically by admin-navigation.js and admin-components.js -->
+      </main>
+    </div>
+  </div>
+
+  <!-- 4. Global Accessible Modal Dialog Container -->
+  <div class="dashboard-modal-container" id="dashboard-modal-container" hidden></div>
+
+  <!-- Shared Data Libraries (Reused from existing public website) -->
+  <script src="../js/data/services.js"></script>
+  <script src="../js/data/pricing.js"></script>
+  <script src="../js/data/blogs.js"></script>
+  <script src="../js/data/site-config.js"></script>
+
+  <!-- Admin Dashboard Dedicated Scripts -->
+  <script src="js/admin-data-adapter.js"></script>
+  <script src="js/admin-forms.js"></script>
+  <script src="js/admin-components.js"></script>
+  <script src="js/admin-navigation.js"></script>
+  <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

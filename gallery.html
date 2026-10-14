@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architectural Venue Gallery | VENORA Events &amp; Venues</title>
+  <meta name="description"
+    content="Explore inspiring corporate venues, conference halls, architectural details, and continuous visual exhibition in VENORA's interactive 3D digital gallery.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Architectural Venue Gallery | VENORA Events &amp; Venues">
+  <meta property="og:description"
+    content="Immerse yourself in VENORA's curated collection of extraordinary corporate spaces and architectural event settings.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body / UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Core & Shared Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/gallery.css">
+
+  <!-- Theme Script: Runs immediately to prevent flash of unstyled theme -->
+  <script src="js/theme.js"></script>
+</head>
+
+<body>
+  <!-- Accessible Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Navbar Mount Point -->
+  <div id="navbar-mount"></div>
+
+  <!-- Main Landmark -->
+  <main id="main-content">
+
+    <!-- ====================================================================
+         SECTION 1: CINEMATIC GALLERY HERO
+         ==================================================================== -->
+    <section class="gallery-hero-section" id="gallery-hero" aria-label="Gallery Introduction Header">
+      <!-- Full-Width Background with Refined Blur & Theme-Aware Overlays -->
+      <div class="gallery-hero-bg" aria-hidden="true">
+        <img src="assets/images/hero-panel-left.jpg" alt="VENORA luxury venue atrium architectural perspective"
+          class="gallery-hero-bg-img" fetchpriority="high">
+        <div class="gallery-hero-overlay"></div>
+        <div class="gallery-hero-glow"></div>
+      </div>
+
+      <div class="container gallery-hero-container">
+        <!-- Center-Aligned Editorial Hero Content -->
+        <div class="gallery-hero-content">
+          <div class="section-eyebrow gallery-hero-eyebrow reveal-on-scroll">THE VENORA COLLECTION</div>
+          <h1 class="gallery-hero-title reveal-on-scroll stagger-1">
+            Every Space Has a Story.<br>
+            <span class="gallery-gold-text">Discover Yours.</span>
+          </h1>
+          <div class="gallery-hero-gold-line reveal-on-scroll stagger-2" aria-hidden="true"></div>
+          <p class="gallery-hero-desc reveal-on-scroll stagger-2">
+            Explore inspiring venues, exceptional architectural spaces, and the settings where memorable gatherings begin.
+          </p>
+          <div class="gallery-hero-actions reveal-on-scroll stagger-3">
+            <a href="#gallery-showcase" class="btn btn-primary" id="hero-explore-gallery-btn">
+              <span>Explore Collection</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </a>
+            <a href="#signature-collection" class="btn btn-outline-light" id="hero-signature-frames-btn">
+              <span>Signature Frames</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: GALLERY INTRODUCTION & CATEGORY CONTROLS
+         ==================================================================== -->
+    <section class="gallery-controls-section" id="gallery-controls" aria-label="Filter Venue Categories">
+      <div class="container">
+        <div class="gallery-intro-header text-center">
+          <div class="section-eyebrow reveal-on-scroll">CURATED PERSPECTIVES</div>
+          <h2 class="gallery-intro-title reveal-on-scroll stagger-1">Explore by Atmosphere</h2>
+          <p class="gallery-intro-desc reveal-on-scroll stagger-2">
+            Discover different spaces, architectural details, and event settings through a carefully curated visual collection.
+          </p>
+        </div>
+
+        <!-- Category Pill Navigation -->
+        <div class="gallery-category-nav reveal-on-scroll stagger-3" role="tablist" aria-label="Venue atmosphere categories">
+          <!-- Rendered dynamically by js/gallery.js -->
+        </div>
+
+        <!-- Active Filter Meta Bar -->
+        <div class="gallery-filter-meta reveal-on-scroll stagger-3">
+          <span class="gallery-count-badge" id="gallery-items-count">Showing all curated spaces</span>
+          <button type="button" class="gallery-reset-filter-btn" id="gallery-reset-btn" hidden>
+            <span>Reset to All Spaces</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: SIGNATURE INTERACTIVE 3D PERSPECTIVE GALLERY
+         ==================================================================== -->
+    <section class="gallery-showcase-section" id="gallery-showcase" aria-label="Interactive 3D Venue Exhibition">
+      <div class="container gallery-showcase-container">
+
+        <!-- Interaction Hint -->
+        <div class="gallery-interaction-hint" aria-hidden="true">
+          <span class="hint-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+          </span>
+          <span class="hint-text">Hover or select any panel to bring it forward &bull; Click to open full-screen preview</span>
+        </div>
+
+        <!-- 3D Perspective Stage -->
+        <div class="gallery-3d-stage" id="gallery-3d-stage">
+          <div class="gallery-3d-track" id="gallery-3d-track" role="region" aria-label="3D Venue Panels Collection">
+            <!-- Rendered dynamically by js/gallery.js -->
+          </div>
+        </div>
+
+        <!-- Mobile Carousel Navigation Controls -->
+        <div class="gallery-mobile-nav" id="gallery-mobile-nav" aria-label="Gallery panel carousel controls">
+          <button type="button" class="gallery-nav-arrow" id="gallery-prev-panel-btn" aria-label="Previous venue panel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <div class="gallery-pagination-dots" id="gallery-pagination-dots" aria-hidden="true"></div>
+          <button type="button" class="gallery-nav-arrow" id="gallery-next-panel-btn" aria-label="Next venue panel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: THE SIGNATURE COLLECTION (Editorial Asymmetrical Composition)
+         ==================================================================== -->
+    <section class="gallery-signature-section" id="signature-collection" aria-label="The Signature Collection">
+      <div class="container">
+        <div class="gallery-section-intro">
+          <div class="section-eyebrow reveal-on-scroll">SELECTED FRAMES</div>
+          <h2 class="gallery-section-title reveal-on-scroll stagger-1">The Signature Collection</h2>
+          <p class="gallery-section-desc reveal-on-scroll stagger-2">
+            A closer look at the spaces, forms, and visual details that make every setting distinctive.
+          </p>
+        </div>
+
+        <!-- Asymmetrical Editorial Showcase Grid -->
+        <div class="signature-editorial-grid" id="signature-editorial-grid">
+          <!-- Rendered dynamically by js/gallery.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: PERSPECTIVES IN MOTION (Multi-Band Horizontal Scroll Section)
+         ==================================================================== -->
+    <section class="gallery-motion-section" id="perspectives-in-motion" aria-label="Spaces in Motion">
+      <div class="container">
+        <div class="gallery-section-intro text-center">
+          <div class="section-eyebrow reveal-on-scroll">A DIFFERENT PERSPECTIVE</div>
+          <h2 class="gallery-section-title reveal-on-scroll stagger-1">Spaces in Motion</h2>
+          <p class="gallery-section-desc reveal-on-scroll stagger-2">
+            Explore the shapes, scale, light, and atmosphere of remarkable event environments.
+          </p>
+        </div>
+      </div>
+
+      <!-- Full-Width Horizontal Continuous Kinetic Bands -->
+      <div class="motion-bands-wrapper" id="motion-bands-wrapper">
+        <!-- Band 1: Top Track (Left Drift) -->
+        <div class="motion-band motion-band-top" aria-label="Top perspective ribbon">
+          <div class="motion-band-track track-drift-left" id="motion-track-top">
+            <!-- Rendered dynamically by js/gallery.js -->
+          </div>
+        </div>
+
+        <!-- Band 2: Middle Track (Right Drift) -->
+        <div class="motion-band motion-band-middle" aria-label="Middle perspective ribbon">
+          <div class="motion-band-track track-drift-right" id="motion-track-middle">
+            <!-- Rendered dynamically by js/gallery.js -->
+          </div>
+        </div>
+
+        <!-- Band 3: Bottom Track (Left Drift) -->
+        <div class="motion-band motion-band-bottom" aria-label="Bottom perspective ribbon">
+          <div class="motion-band-track track-drift-left-slow" id="motion-track-bottom">
+            <!-- Rendered dynamically by js/gallery.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: HIDDEN DETAILS (Architectural Discovery with Interactive Pins)
+         ==================================================================== -->
+    <section class="gallery-details-section" id="hidden-details" aria-label="Architectural Details Discovery">
+      <div class="container">
+        <div class="gallery-section-intro">
+          <div class="section-eyebrow reveal-on-scroll">BEHIND THE FRAME</div>
+          <h2 class="gallery-section-title reveal-on-scroll stagger-1">The Beauty Is in the Details.</h2>
+          <p class="gallery-section-desc reveal-on-scroll stagger-2">
+            From carefully arranged tables to architectural lines and ambient lighting, discover the details that shape the atmosphere of a space.
+          </p>
+        </div>
+
+        <!-- Close-Up Architectural Details Grid -->
+        <div class="details-discovery-grid" id="details-discovery-grid">
+          <!-- Rendered dynamically by js/gallery.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: LIGHT & ATMOSPHERE (Mood-Based Visual Chapters)
+         ==================================================================== -->
+    <section class="gallery-atmosphere-section" id="light-and-atmosphere" aria-label="Light and Atmosphere Mood Exploration">
+      <div class="container">
+        <div class="atmosphere-header-row">
+          <div class="gallery-section-intro">
+            <div class="section-eyebrow reveal-on-scroll">MOOD &amp; AMBIENCE</div>
+            <h2 class="gallery-section-title reveal-on-scroll stagger-1">Every Space Tells a Different Story.</h2>
+            <p class="gallery-section-desc reveal-on-scroll stagger-2">
+              Discover how lighting, architecture, and atmosphere change the feeling of a setting.
+            </p>
+          </div>
+
+          <!-- 4 Mood Navigation Triggers -->
+          <div class="atmosphere-mood-triggers reveal-on-scroll stagger-3" role="tablist" aria-label="Visual atmosphere moods">
+            <!-- Rendered dynamically by js/gallery.js -->
+          </div>
+        </div>
+
+        <!-- Dynamic Mood Showcase Stage -->
+        <div class="atmosphere-showcase-stage" id="atmosphere-showcase-stage">
+          <!-- Rendered dynamically by js/gallery.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: THE ENDLESS FRAME (Continuous Panoramic Moving Ribbon)
+         ==================================================================== -->
+    <section class="gallery-endless-section" id="endless-frame" aria-label="Continuous Panoramic Ribbon">
+      <div class="container">
+        <div class="endless-intro-row">
+          <div>
+            <div class="section-eyebrow reveal-on-scroll">A COLLECTION WITHOUT BORDERS</div>
+            <h2 class="gallery-section-title reveal-on-scroll stagger-1">One More Look.</h2>
+          </div>
+          <!-- Play / Pause Ribbon Motion Toggle -->
+          <button type="button" class="endless-pause-btn" id="endless-toggle-motion-btn" aria-label="Pause moving ribbon" aria-pressed="false">
+            <span class="btn-pause-icon" aria-hidden="true">❚❚</span>
+            <span class="btn-pause-text">Pause Motion</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Seamless Edge-Faded Continuous Photographic Ribbon -->
+      <div class="endless-ribbon-viewport" id="endless-ribbon-viewport">
+        <div class="endless-ribbon-track" id="endless-ribbon-track">
+          <!-- Rendered dynamically by js/gallery.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 9: CLOSING CALL TO ACTION
+         ==================================================================== -->
+    <section class="gallery-cta-section" id="gallery-cta" aria-label="Gallery Call to Action">
+      <div class="gallery-cta-bg" aria-hidden="true">
+        <img src="assets/images/cta-venue.jpg" alt="Illuminated glass architectural venue pavilion" class="gallery-cta-img">
+        <div class="gallery-cta-overlay"></div>
+      </div>
+      <div class="container gallery-cta-content">
+        <div class="gallery-cta-eyebrow reveal-on-scroll">YOUR NEXT CHAPTER</div>
+        <h2 class="gallery-cta-title reveal-on-scroll stagger-1">
+          A Remarkable Event Begins With the Right Space.
+        </h2>
+        <p class="gallery-cta-desc reveal-on-scroll stagger-2">
+          Explore the possibilities and discover the setting that fits your next event.
+        </p>
+        <div class="gallery-cta-actions reveal-on-scroll stagger-3">
+          <a href="services.html" class="btn btn-primary" id="gallery-cta-services-btn">
+            <span>Explore Services</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="contact.html?type=event" class="btn btn-outline-light" id="gallery-cta-contact-btn">
+            <span>Plan Your Event</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       SHARED FULL-SCREEN IMAGE PREVIEW LIGHTBOX MODAL (Section 9 Shared Lightbox)
+       ==================================================================== -->
+  <div class="gallery-lightbox" id="gallery-lightbox" role="dialog" aria-modal="true"
+    aria-label="Venue Full-Screen Preview" hidden>
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+
+    <div class="lightbox-dialog" role="document">
+      <!-- Close Button -->
+      <button type="button" class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close preview modal (Press Escape)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Previous Image Button -->
+      <button type="button" class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev-btn" aria-label="Previous image (Left Arrow)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Main Stage Container -->
+      <div class="lightbox-stage">
+        <div class="lightbox-image-wrapper">
+          <img src="" alt="" class="lightbox-img" id="lightbox-img">
+          <div class="lightbox-img-shade"></div>
+        </div>
+
+        <!-- Lightbox Caption & Specs -->
+        <div class="lightbox-caption">
+          <div class="lightbox-meta-row">
+            <span class="lightbox-category-pill" id="lightbox-category">Conference Halls</span>
+            <span class="lightbox-counter" id="lightbox-counter">1 of 12</span>
+          </div>
+          <h3 class="lightbox-title" id="lightbox-title">The Sovereign Auditorium</h3>
+          <p class="lightbox-desc" id="lightbox-desc">
+            Tiered acoustic amphitheater engineered for global keynotes, flagship tech summits, and live broadcasts.
+          </p>
+          <div class="lightbox-specs-row" id="lightbox-specs">
+            <span class="spec-item" id="lightbox-capacity">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span id="lightbox-capacity-val">600 Attendees</span>
+            </span>
+            <span class="spec-divider">&bull;</span>
+            <span class="spec-item" id="lightbox-area">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              </svg>
+              <span id="lightbox-area-val">8,400 sq ft</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Image Button -->
+      <button type="button" class="lightbox-nav-btn lightbox-next-btn" id="lightbox-next-btn" aria-label="Next image (Right Arrow)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Shared Footer Mount Point -->
+  <div id="footer-mount"></div>
+
+  <!-- Centralized Scripts -->
+  <script src="js/data/gallery.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+
+</html>
