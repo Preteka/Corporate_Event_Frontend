@@ -635,7 +635,7 @@
    -------------------------------------------------------------------------- */
 .pricing-comparison-section {
   padding-block: clamp(4rem, 6.5vw, 6rem);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-alt);
   transition: background-color var(--transition-normal);
 }
 
@@ -847,7 +847,7 @@
 }
 
 [data-theme="light"] .pricing-final-cta {
-  background-color: #F7F5F0;
+  background-color: var(--bg-highlight);
 }
 
 .pricing-cta-bg {
@@ -881,8 +881,8 @@
 
 [data-theme="light"] .pricing-cta-overlay {
   background:
-    radial-gradient(ellipse at center 45%, rgba(255, 255, 255, 0.65) 0%, rgba(247, 245, 240, 0.88) 75%, rgba(247, 245, 240, 0.96) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(247, 245, 240, 0.92) 100%);
+    radial-gradient(ellipse at center 45%, rgba(255, 255, 255, 0.65) 0%, rgba(248, 243, 233, 0.88) 75%, rgba(248, 243, 233, 0.96) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(248, 243, 233, 0.92) 100%);
 }
 
 .pricing-cta-content {

@@ -311,21 +311,36 @@
           </div>
 
           <div class="map-display-container">
-            <div class="map-placeholder-box">
-              <svg class="map-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
+            <iframe
+              class="contact-map-iframe"
+              src="https://maps.google.com/maps?q=450%20Montgomery%20St%2C%20Suite%201800%2C%20San%20Francisco%2C%20CA%2094104&amp;output=embed"
+              title="Map showing the VENORA San Francisco Advisory Office at 450 Montgomery Street"
+              loading="eager"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="map-placeholder-box">
+            <svg class="map-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div>
               <h3 class="map-placeholder-title">Consultations By Appointment</h3>
               <p class="map-placeholder-desc">
                 Our advisors accommodate private venue discovery presentations and spatial walkthrough reviews at our
                 Financial District office or directly at your preferred prospective venue.
               </p>
-              <span style="font-size: 0.8rem; color: var(--gold-primary); font-weight: 600;">
-                Scheduled Appointments Only &bull; Please arrange in advance
-              </span>
             </div>
+            <a href="https://maps.google.com/?q=450+Montgomery+St+San+Francisco+CA"
+              class="map-fallback-link" target="_blank" rel="noopener noreferrer">
+              Map not loading? Open this location in Google Maps
+            </a>
+            <span class="map-appointment-note">
+              Scheduled Appointments Only &bull; Please arrange in advance
+            </span>
           </div>
         </div>
       </div>

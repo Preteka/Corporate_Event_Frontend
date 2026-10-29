@@ -25,25 +25,30 @@
   --transition-normal: 0.4s var(--ease-cinematic);
   --transition-slow: 0.8s var(--ease-cinematic);
 
-  /* Radius System */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
-  --radius-full: 9999px;
+  /* Standardized Corner Radii System */
+  --radius-xs: 4px;
+  --radius-sm: 8px;   /* Small inputs and compact controls */
+  --radius-md: 12px;  /* Standard buttons, cards, and text containers */
+  --radius-lg: 16px;  /* Large featured cards, image panels, and modals */
+  --radius-xl: 24px;  /* Extra large containers */
+  --radius-full: 9999px; /* Circular icons and pill-shaped controls */
 }
 
 /* Light Theme Tokens: Gold & White */
 :root,
 [data-theme="light"] {
   --bg-primary: #FFFFFF;
-  --bg-secondary: #F7F5F0;
+  --bg-secondary: #F5F5F5;
+  --bg-alt: #F5F5F5;
+  --bg-subtle: #F7F7F7;
+  --bg-highlight: #F8F3E9;
   --gold-primary: #C5A15B;
   --gold-deep: #A7833F;
   --gold-tint: rgba(197, 161, 91, 0.1);
-  --text-primary: #252525;
+  --text-primary: #222222;
   --text-secondary: #77736B;
-  --border-color: #E9E4DA;
+  --border-color: #E5E0D6;
+  --border-subtle: #E5E0D6;
   --border-focus: #C5A15B;
   --surface-card: #FFFFFF;
   --surface-card-hover: #FDFBF7;
@@ -79,12 +84,16 @@
 [data-theme="dark"] {
   --bg-primary: #101522;
   --bg-secondary: #1B2333;
+  --bg-alt: #161D2C;
+  --bg-subtle: #182030;
+  --bg-highlight: rgba(216, 185, 118, 0.08);
   --gold-primary: #D8B976;
   --gold-deep: #B89450;
   --gold-tint: rgba(216, 185, 118, 0.12);
   --text-primary: #FFFFFF;
   --text-secondary: #B7BBC5;
   --border-color: #30394B;
+  --border-subtle: #30394B;
   --border-focus: #D8B976;
   --surface-card: #161D2C;
   --surface-card-hover: #1E273A;
@@ -255,7 +264,7 @@ button {
   justify-content: center;
   gap: 0.6rem;
   padding: 0.85rem 1.85rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 600;
@@ -459,19 +468,32 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.14;
-  filter: saturate(0.85);
-  transform: scale(1.04);
+  object-position: center 30%;
+  opacity: 0.48;
+  filter: blur(4px) saturate(0.95) contrast(1.04);
+  transform: scale(1.06);
+  transition: opacity var(--transition-normal);
+  will-change: transform, opacity;
 }
 
 [data-theme="light"] .hero-texture-img {
-  opacity: 0.08;
+  opacity: 0.36;
+  filter: blur(4px) saturate(0.9) contrast(1.02);
 }
 
 .hero-texture-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center 40%, transparent 20%, var(--bg-primary) 85%);
+  background: 
+    radial-gradient(ellipse at 50% 38%, rgba(16, 21, 34, 0.62) 0%, rgba(16, 21, 34, 0.82) 65%, var(--bg-primary) 100%),
+    linear-gradient(180deg, rgba(16, 21, 34, 0.5) 0%, transparent 40%, var(--bg-primary) 100%);
+  transition: background var(--transition-normal);
+}
+
+[data-theme="light"] .hero-texture-overlay {
+  background: 
+    radial-gradient(ellipse at 50% 38%, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.86) 65%, var(--bg-primary) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, transparent 40%, var(--bg-primary) 100%);
 }
 
 .hero-ref-content {
@@ -592,7 +614,7 @@ button {
   will-change: transform, opacity;
   cursor: grab;
   user-select: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   transition: box-shadow 0.3s ease;
 }
 
@@ -604,7 +626,7 @@ button {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
   border: 1px solid var(--border-color);
@@ -627,6 +649,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
   pointer-events: none;
   -webkit-user-drag: none;
@@ -718,7 +741,7 @@ button {
 }
 
 [data-theme="light"] .txt-chunk {
-  color: #252525;
+  color: #222222;
 }
 
 /* Two Centered Compact Buttons */
@@ -766,7 +789,7 @@ button {
    -------------------------------------------------------------------------- */
 .services-editorial-section {
   padding-block: clamp(4rem, 7vw, 6.5rem);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-alt);
   position: relative;
 }
 
@@ -923,7 +946,7 @@ button {
 
 .why-sticky-image-wrap {
   margin-top: 2rem;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--card-shadow);
   border: 1px solid var(--border-color);
@@ -1007,7 +1030,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   8. SECTION 5: CLIENTS & TESTIMONIALS (Inverted Theme & Editorial Carousel)
+   8. SECTION 5: CLIENTS & TESTIMONIALS (Home 1)
    -------------------------------------------------------------------------- */
 .testimonials-section {
   padding-block: clamp(3.75rem, 5.5vw, 4.75rem);
@@ -1018,6 +1041,35 @@ button {
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
+.champagne-testimonials-section {
+  --testi-heading: #29251F;
+  --testi-text: #29251F;
+  --testi-desc: #51483A;
+  --testi-eyebrow: #5D4A2A;
+  --testi-quote-mark: #B89550;
+  --testi-role: #29251F;
+  --testi-category: #51483A;
+  --testi-category-border: rgba(117, 85, 29, 0.2);
+  --testi-category-bg: rgba(255, 253, 247, 0.52);
+  --testi-ctrl-border: rgba(117, 85, 29, 0.28);
+  --testi-ctrl-bg: rgba(255, 253, 247, 0.52);
+  --testi-ctrl-color: #514126;
+  --testi-ctrl-hover-bg: #B89550;
+  --testi-ctrl-hover-border: #A5803D;
+  --testi-ctrl-hover-color: #FFFFFF;
+  --testi-dot-inactive: rgba(117, 85, 29, 0.34);
+  --testi-dot-active: #8A6A32;
+  --testi-bg-glow:
+    radial-gradient(ellipse at 50% 12%, rgba(255, 253, 247, 0.82) 0%, rgba(255, 253, 247, 0) 56%),
+    radial-gradient(ellipse at 12% 72%, rgba(232, 209, 154, 0.28) 0%, rgba(232, 209, 154, 0) 60%),
+    radial-gradient(ellipse at 91% 34%, rgba(246, 232, 197, 0.48) 0%, rgba(246, 232, 197, 0) 61%),
+    linear-gradient(120deg, rgba(255, 253, 247, 0.28), rgba(255, 255, 255, 0.46) 48%, rgba(232, 209, 154, 0.18));
+  --testi-ghost-quote-color: rgba(117, 85, 29, 0.055);
+
+  background: linear-gradient(112deg, #F6E8C5 0%, #FBF5E8 28%, #FFFDF7 52%, #FBF5E8 76%, #E8D19A 100%);
+  transition: color var(--transition-normal);
+}
+
 /* Subtle Decorative Background Elements */
 .testi-bg-glow {
   position: absolute;
@@ -1026,6 +1078,10 @@ button {
   pointer-events: none;
   z-index: 1;
   transition: background var(--transition-normal);
+}
+
+.champagne-testimonials-section .testi-bg-glow {
+  backdrop-filter: blur(2px);
 }
 
 .testi-bg-ghost-quote {
@@ -1163,6 +1219,15 @@ button {
   pointer-events: auto;
 }
 
+.champagne-testimonials-section .testimonial-card {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 253, 247, 0.78);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 253, 247, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 12px 32px rgba(117, 85, 29, 0.07);
+  backdrop-filter: blur(3px);
+}
+
 .testimonial-quote-text {
   font-family: var(--font-heading);
   font-size: clamp(1.2rem, 2.1vw, 1.65rem);
@@ -1243,6 +1308,10 @@ button {
   outline-offset: 3px;
 }
 
+.champagne-testimonials-section .carousel-btn:focus-visible {
+  outline-color: var(--testi-quote-mark);
+}
+
 .carousel-dots {
   display: flex;
   align-items: center;
@@ -1275,6 +1344,10 @@ button {
 .carousel-dot:focus-visible {
   outline: 2px solid var(--gold-primary);
   outline-offset: 3px;
+}
+
+.champagne-testimonials-section .carousel-dot:focus-visible {
+  outline-color: var(--testi-quote-mark);
 }
 
 /* --------------------------------------------------------------------------
@@ -1372,7 +1445,7 @@ button {
 .space-card {
   position: relative;
   flex: 1 1 0%;
-  border-radius: clamp(16px, 1.5vw, 22px);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
   background-color: #121724;
@@ -1622,7 +1695,7 @@ button {
 }
 
 [data-theme="light"] .cta-section {
-  background-color: #F7F5F0;
+  background-color: var(--bg-highlight);
 }
 
 .cta-bg-container {
@@ -1658,8 +1731,8 @@ button {
 
 [data-theme="light"] .cta-bg-overlay {
   background:
-    radial-gradient(ellipse at center 45%, rgba(255, 255, 255, 0.65) 0%, rgba(247, 245, 240, 0.88) 75%, rgba(247, 245, 240, 0.96) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(247, 245, 240, 0.92) 100%);
+    radial-gradient(ellipse at center 45%, rgba(255, 255, 255, 0.65) 0%, rgba(248, 243, 233, 0.88) 75%, rgba(248, 243, 233, 0.96) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(248, 243, 233, 0.92) 100%);
 }
 
 .cta-content {

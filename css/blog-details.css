@@ -496,7 +496,7 @@
    -------------------------------------------------------------------------- */
 .article-related-section {
   padding-block: clamp(4rem, 6.5vw, 6rem);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-alt);
   transition: background-color var(--transition-normal);
 }
 
@@ -519,6 +519,11 @@
   overflow: hidden;
 }
 
+[data-theme="light"] .article-cta-section {
+  background-color: var(--bg-highlight);
+  color: var(--text-primary);
+}
+
 .article-cta-bg {
   position: absolute;
   inset: 0;
@@ -531,10 +536,27 @@
   opacity: 0.28;
 }
 
+[data-theme="light"] .article-cta-img {
+  opacity: 0.18;
+  filter: brightness(1.08) contrast(1.02);
+}
+
 .article-cta-overlay {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at center, rgba(16, 21, 34, 0.72) 0%, rgba(16, 21, 34, 0.94) 100%);
+}
+
+[data-theme="light"] .article-cta-overlay {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.72) 0%, rgba(248, 243, 233, 0.94) 100%);
+}
+
+[data-theme="light"] .article-cta-title {
+  color: #101522;
+}
+
+[data-theme="light"] .article-cta-desc {
+  color: #4B5563;
 }
 
 .article-cta-content {

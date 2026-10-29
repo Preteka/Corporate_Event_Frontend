@@ -20,27 +20,31 @@
   --transition-fast: 0.2s var(--ease-smooth);
   --transition-normal: 0.35s var(--ease-cinematic);
 
-  /* Radius */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  /* Standardized Corner Radii System */
+  --radius-xs: 4px;
+  --radius-sm: 8px;   /* Small inputs and compact controls */
+  --radius-md: 12px;  /* Standard buttons, cards, and text containers */
+  --radius-lg: 16px;  /* Large featured cards and image panels */
+  --radius-xl: 24px;  /* Extra large containers */
   --radius-full: 9999px;
 
   /* Light Theme (Default) */
   --bg-primary: #FFFFFF;
-  --bg-secondary: #F7F5F0;
+  --bg-secondary: #F5F5F5;
+  --bg-alt: #F5F5F5;
+  --bg-subtle: #F7F7F7;
+  --bg-highlight: #F8F3E9;
   --bg-sidebar: #FFFFFF;
   --bg-topbar: rgba(255, 255, 255, 0.92);
   --gold-primary: #C5A15B;
   --gold-deep: #A7833F;
   --gold-tint: rgba(197, 161, 91, 0.12);
   --gold-tint-strong: rgba(197, 161, 91, 0.22);
-  --text-primary: #252525;
+  --text-primary: #222222;
   --text-secondary: #77736B;
   --text-muted: #9E9A92;
-  --border-color: #E9E4DA;
-  --border-subtle: #F0EDE6;
+  --border-color: #E5E0D6;
+  --border-subtle: #E5E0D6;
   --surface-card: #FFFFFF;
   --surface-card-hover: #FDFBF7;
   --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
@@ -1167,9 +1171,10 @@ img {
 .event-name {
   font-size: 1rem;
   font-weight: 600;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .event-meta-row {
@@ -1225,10 +1230,18 @@ img {
 .activity-item {
   position: relative;
   padding-bottom: 1.25rem;
+  display: flex;
+  min-width: 0;
 }
 
 .activity-item:last-child {
   padding-bottom: 0;
+}
+
+/* Activity content must be able to shrink inside flex row */
+.activity-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .activity-marker {
@@ -1283,6 +1296,10 @@ img {
 .activity-title {
   font-size: 0.9375rem;
   font-weight: 600;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .activity-date {
@@ -2914,6 +2931,99 @@ img {
   .dash-modal-header, .dash-modal-body, .dash-modal-footer {
     padding: 1rem;
   }
+
+  /* ── Upcoming Events & Recent Activity: 360–480px Overflow Fixes ── */
+
+  /* Reduce panel padding so cards fit comfortably */
+  .dashboard-panel {
+    padding: 1.25rem 1rem;
+  }
+
+  /* Allow event card to use full width; stack if needed */
+  .event-preview-card {
+    gap: 0.85rem;
+    padding: 0.85rem;
+    align-items: flex-start;
+  }
+
+  /* Shrink thumbnail so details have more room */
+  .event-img-wrap {
+    width: 68px;
+    height: 62px;
+    flex-shrink: 0;
+  }
+
+  /* Details wrapper must not overflow its flex parent */
+  .event-details-wrap {
+    min-width: 0;
+    flex: 1;
+  }
+
+  /* Allow event name to wrap instead of overflowing */
+  .event-name {
+    white-space: normal;
+    word-break: break-word;
+    font-size: 0.9375rem;
+  }
+
+  /* Stack badge below title on very narrow screens */
+  .event-top-row {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  /* Allow meta items to wrap naturally */
+  .event-meta-row {
+    gap: 0.5rem 0.75rem;
+  }
+
+  .meta-item {
+    font-size: 0.75rem;
+  }
+
+  /* Footer row: stack package tag and view-details button */
+  .event-footer-row {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  /* ── Recent Activity Timeline fixes ── */
+
+  /* Slightly reduce start padding to gain horizontal room */
+  .activity-timeline {
+    padding-inline-start: 1.35rem;
+  }
+
+  /* Allow activity header to wrap (title + date) */
+  .activity-header {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  /* Unwrap title so it can use full width when wrapping */
+  .activity-title {
+    white-space: normal;
+    word-break: break-word;
+    font-size: 0.875rem;
+  }
+
+  /* Date stays compact; allow it to sit below title if needed */
+  .activity-date {
+    flex-shrink: 0;
+  }
+
+  .activity-detail {
+    font-size: 0.75rem;
+    word-break: break-word;
+  }
+
+  /* Ensure badges don't force overflow */
+  .activity-tag {
+    display: inline-block;
+    max-width: 100%;
+    word-break: break-word;
+  }
 }
 
 /* Reduced Motion */
@@ -2923,5 +3033,42 @@ img {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ── 360px – Narrowest phones: extra tightening ── */
+@media (max-width: 390px) {
+  /* Remove extra horizontal padding so cards use full viewport */
+  .dashboard-main-content {
+    padding: 1rem 0.75rem;
+  }
+
+  /* Reduce panel internal padding further */
+  .dashboard-panel {
+    padding: 1rem 0.875rem;
+  }
+
+  /* More compact event card */
+  .event-preview-card {
+    gap: 0.6rem;
+    padding: 0.75rem;
+  }
+
+  /* Even smaller thumbnail at 360px */
+  .event-img-wrap {
+    width: 56px;
+    height: 52px;
+  }
+
+  /* Ensure long venue names wrap safely */
+  .meta-item {
+    max-width: 100%;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  /* Timeline: tighten indent at the narrowest size */
+  .activity-timeline {
+    padding-inline-start: 1.25rem;
   }
 }

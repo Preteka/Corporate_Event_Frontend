@@ -26,6 +26,7 @@
         <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="login.html?redirect=client-dashboard/index.html" class="nav-link" id="nav-dashboard-link">Dashboard</a></li>
       </ul>
     </nav>
 
@@ -55,54 +56,9 @@
         <span class="dir-indicator" aria-hidden="true">LTR</span>
       </button>
 
-      <div class="profile-dropdown-wrapper">
-        <button type="button" class="nav-control-btn profile-trigger-btn" id="profile-menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu-dropdown" aria-label="Account Options">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-        </button>
-
-        <div class="profile-dropdown-menu" id="profile-menu-dropdown" role="menu" aria-labelledby="profile-menu-button" hidden>
-          <div class="dropdown-header">
-            <span class="dropdown-header-title">Client Access</span>
-            <span class="dropdown-header-subtitle">VENORA Portal</span>
-          </div>
-          <div class="dropdown-divider" role="separator"></div>
-          <a href="login.html" class="dropdown-item" role="menuitem">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
-              <polyline points="10 17 15 12 10 7"></polyline>
-              <line x1="15" y1="12" x2="3" y2="12"></line>
-            </svg>
-            <span>Login</span>
-          </a>
-          <a href="signup.html" class="dropdown-item" role="menuitem">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="8.5" cy="7" r="4"></circle>
-              <line x1="20" y1="8" x2="20" y2="14"></line>
-              <line x1="23" y1="11" x2="17" y2="11"></line>
-            </svg>
-            <span>Sign Up</span>
-          </a>
-          <a href="client-dashboard/index.html" class="dropdown-item" role="menuitem">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="7" height="7"></rect>
-              <rect x="14" y="3" width="7" height="7"></rect>
-              <rect x="14" y="14" width="7" height="7"></rect>
-              <rect x="3" y="14" width="7" height="7"></rect>
-            </svg>
-            <span>Client Dashboard</span>
-          </a>
-          <a href="admin-dashboard/index.html" class="dropdown-item" role="menuitem">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"></path>
-            </svg>
-            <span>Admin Dashboard</span>
-          </a>
-        </div>
-      </div>
+      <a href="contact.html" class="nav-cta-btn" id="header-plan-btn" aria-label="Plan Your Event">
+        <span>Plan Your Event</span>
+      </a>
     </div>
 
     <button type="button" class="nav-hamburger-btn" id="mobile-menu-toggle" aria-controls="mobile-navigation-drawer" aria-expanded="false" aria-label="Toggle Mobile Menu">
@@ -139,8 +95,19 @@
           <li><a href="gallery.html" class="mobile-nav-item">Gallery</a></li>
           <li><a href="blog.html" class="mobile-nav-item">Blog</a></li>
           <li><a href="contact.html" class="mobile-nav-item">Contact</a></li>
+          <li><a href="login.html?redirect=client-dashboard/index.html" class="mobile-nav-item" id="mobile-nav-dashboard-link">Dashboard</a></li>
         </ul>
       </nav>
+
+      <div class="mobile-drawer-cta-wrap">
+        <a href="contact.html" class="mobile-drawer-cta-btn" id="mobile-drawer-plan-btn">
+          <span>Plan Your Event</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
 
       <div class="mobile-drawer-controls">
         <div class="drawer-control-row">
@@ -162,8 +129,6 @@
           <a href="login.html" class="mobile-profile-btn btn-secondary">Login</a>
           <a href="signup.html" class="mobile-profile-btn btn-primary">Sign Up</a>
         </div>
-        <a href="client-dashboard/index.html" class="mobile-dashboard-link">Client Dashboard &rarr;</a>
-        <a href="admin-dashboard/index.html" class="mobile-dashboard-link" style="margin-top: 0.4rem;">Admin Dashboard &rarr;</a>
       </div>
     </div>
   </div>
@@ -335,7 +300,8 @@
       const isCurrent = (href === currentPath) ||
         (currentPath === '' && href === 'index.html') ||
         (currentPath === 'service-details.html' && href === 'services.html') ||
-        (currentPath === 'blog-details.html' && href === 'blog.html');
+        (currentPath === 'blog-details.html' && href === 'blog.html') ||
+        ((window.location.pathname.includes('dashboard') || currentPath.includes('dashboard')) && href && href.includes('dashboard'));
 
       if (isCurrent) {
         link.classList.add('is-active');
@@ -369,46 +335,11 @@
       });
     });
 
-    // 2. Profile Dropdown Interaction
-    const profileBtn = document.getElementById('profile-menu-button');
-    const profileMenu = document.getElementById('profile-menu-dropdown');
-
-    if (profileBtn && profileMenu) {
-      function openProfileMenu() {
-        profileBtn.setAttribute('aria-expanded', 'true');
-        profileMenu.hidden = false;
-      }
-
-      function closeProfileMenu() {
-        profileBtn.setAttribute('aria-expanded', 'false');
-        profileMenu.hidden = true;
-      }
-
-      profileBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = profileBtn.getAttribute('aria-expanded') === 'true';
-        if (isOpen) {
-          closeProfileMenu();
-        } else {
-          openProfileMenu();
-        }
-      });
-
-      // Close on outside click
-      document.addEventListener('click', (e) => {
-        if (!profileMenu.contains(e.target) && !profileBtn.contains(e.target)) {
-          closeProfileMenu();
-        }
-      });
-
-      // Close on Escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !profileMenu.hidden) {
-          closeProfileMenu();
-          profileBtn.focus();
-        }
-      });
-    }
+    // 2. Dashboard Navigation Link Handler
+    const dashboardNavLinks = document.querySelectorAll('#nav-dashboard-link, #mobile-nav-dashboard-link');
+    dashboardNavLinks.forEach(link => {
+      link.setAttribute('href', 'login.html?redirect=client-dashboard/index.html');
+    });
 
     // 3. Mobile Navigation Drawer
     const mobileToggle = document.getElementById('mobile-menu-toggle');
@@ -448,8 +379,8 @@
         btn.addEventListener('click', closeMobileDrawer);
       });
 
-      // Close drawer on link selection
-      const mobileLinks = mobileDrawer.querySelectorAll('.mobile-nav-item');
+      // Close drawer on link or CTA selection
+      const mobileLinks = mobileDrawer.querySelectorAll('.mobile-nav-item, #mobile-drawer-plan-btn');
       mobileLinks.forEach(link => {
         link.addEventListener('click', closeMobileDrawer);
       });
@@ -519,6 +450,75 @@
   const LOGO_DARK = 'assets/logo/logo.png';
   const LOGO_LIGHT = 'assets/logo/logo-light.png';
 
+  const CTA_IMAGES = {
+    'index.html': {
+      src: 'assets/images/hero-venue.jpg',
+      alt: 'Premium corporate event auditorium prepared for a conference'
+    },
+    'home2.html': {
+      src: 'assets/images/venue-amphitheater.jpg',
+      alt: 'Bright architectural conference venue arranged for a corporate event'
+    },
+    'about.html': {
+      src: 'assets/images/about-venue.jpg',
+      alt: 'Professional gathering in a contemporary meeting space'
+    },
+    'services.html': {
+      src: 'assets/images/service-launch.jpg',
+      alt: 'Attendees gathered for a professionally produced corporate event'
+    },
+    'service-details.html': {
+      src: 'assets/images/hero-panel-left.jpg',
+      alt: 'Corporate conference stage prepared for a live presentation'
+    },
+    'pricing.html': {
+      src: 'assets/images/venue-meeting.jpg',
+      alt: 'Well-prepared professional meeting environment'
+    },
+    'gallery.html': {
+      src: 'assets/images/cta-venue.jpg',
+      alt: 'Illuminated glass pavilion showcasing contemporary venue architecture'
+    },
+    'blog.html': {
+      src: 'assets/images/venue-corporate.jpg',
+      alt: 'Contemporary corporate venue with a refined architectural interior',
+      backgroundSelector: '.blog-newsletter-section'
+    },
+    'blog-details.html': {
+      src: 'assets/images/venue-hall.jpg',
+      alt: 'Guests taking part in a discussion at an intimate event venue'
+    },
+    'contact.html': {
+      src: 'assets/images/service-meeting.jpg',
+      alt: 'Welcoming professional meeting space with natural light'
+    }
+  };
+
+  function initCTAImage() {
+    const page = window.location.pathname.split('/').pop() || 'index.html';
+    const imageConfig = CTA_IMAGES[page];
+    if (!imageConfig) return;
+
+    if (imageConfig.backgroundSelector) {
+      const section = document.querySelector(imageConfig.backgroundSelector);
+      if (!section) return;
+
+      section.style.setProperty(
+        '--cta-background-image',
+        `url("${new URL(imageConfig.src, document.baseURI).href}")`
+      );
+      return;
+    }
+
+    const image = document.querySelector(
+      'img.cta-bg-image, img[class$="-cta-bg-img"], img[class$="-cta-img"]'
+    );
+    if (!image) return;
+
+    image.src = imageConfig.src;
+    image.alt = imageConfig.alt;
+  }
+
   function updateThemeLogos() {
     const theme = document.documentElement.getAttribute('data-theme') || 'light';
     const targetSrc = theme === 'light' ? LOGO_LIGHT : LOGO_DARK;
@@ -536,6 +536,8 @@
    * Main bootstrap sequence
    */
   async function init() {
+    initCTAImage();
+
     const [navLoaded, footerLoaded] = await Promise.all([
       loadComponent('navbar-mount', 'components/navbar.html', FALLBACK_NAVBAR),
       loadComponent('footer-mount', 'components/footer.html', FALLBACK_FOOTER)

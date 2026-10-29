@@ -207,6 +207,96 @@
     });
   }
 
+  function initSocialButtons() {
+    const socialBtns = document.querySelectorAll('.auth-social-btn');
+    const alertEl = document.getElementById('auth-alert');
+    if (!socialBtns.length) return;
+
+    socialBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const provider = btn.getAttribute('data-social-provider') || 'Social provider';
+        showAlert(alertEl, `Social sign-in with ${provider} is not configured yet. Please use your corporate email and password.`, 'error');
+        if (alertEl) {
+          alertEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    });
+  }
+
+  function initStandaloneControls() {
+    const themeBtns = document.querySelectorAll('.auth-control-btn[data-action="toggle-theme"]');
+    themeBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (window.VenoraTheme) {
+          window.VenoraTheme.toggleTheme();
+        }
+      });
+    });
+
+    const dirBtns = document.querySelectorAll('.auth-control-btn[data-action="toggle-dir"]');
+    dirBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (window.VenoraTheme) {
+          window.VenoraTheme.toggleDirection();
+        }
+      });
+    });
+
+    function updateLogo() {
+      const theme = document.documentElement.getAttribute('data-theme') || 'light';
+      const logoImg = document.querySelector('.auth-brand-logo img');
+      if (logoImg) {
+        logoImg.src = theme === 'light' ? 'assets/logo/logo-light.png' : 'assets/logo/logo.png';
+      }
+    }
+    updateLogo();
+    window.addEventListener('venora:theme-changed', updateLogo);
+
+    if (window.VenoraTheme && typeof window.VenoraTheme.syncUI === 'function') {
+      window.VenoraTheme.syncUI();
+    }
+  }
+
+  function initDemoButtons() {
+    const adminBtns = document.querySelectorAll('#btn-demo-admin, .btn-demo-admin');
+    const userBtns = document.querySelectorAll('#btn-demo-user, .btn-demo-user');
+
+    adminBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        try {
+          sessionStorage.setItem('venora_active_session', JSON.stringify({
+            id: 'usr_demo_admin',
+            name: 'Alexander Wright (Admin Demo)',
+            email: 'admin@venora-venues.example.com',
+            role: 'admin',
+            company: 'VENORA Operations Group'
+          }));
+        } catch (err) {}
+        window.location.href = 'admin-dashboard/index.html';
+      });
+    });
+
+    userBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        try {
+          sessionStorage.setItem('venora_active_session', JSON.stringify({
+            id: 'usr_demo_client',
+            name: 'Eleanor Vance (Client Demo)',
+            email: 'eleanor.vance@vance-corp.example.com',
+            role: 'client',
+            company: 'Vance Capital Management'
+          }));
+        } catch (err) {}
+        window.location.href = 'client-dashboard/index.html';
+      });
+    });
+  }
+
   window.VenoraAuth = {
     getUser: getActiveUser,
     isAuthenticated: () => getActiveUser() !== null,
@@ -219,5 +309,8 @@
     initPasswordToggles();
     initLoginForm();
     initSignupForm();
+    initSocialButtons();
+    initStandaloneControls();
+    initDemoButtons();
   });
 })();

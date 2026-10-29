@@ -137,26 +137,26 @@
               </div>
 
               <div class="table-responsive">
-                <table class="dash-table">
+                <table class="dash-table dash-table-enquiries">
                   <thead>
                     <tr>
-                      <th>Ref ID</th>
-                      <th>Client</th>
-                      <th>Event Name</th>
-                      <th>Submitted</th>
-                      <th>Status</th>
-                      <th>Action</th>
+                      <th class="col-ref">Ref ID</th>
+                      <th class="col-client">Client</th>
+                      <th class="col-event">Event Name</th>
+                      <th class="col-date">Submitted</th>
+                      <th class="col-status">Status</th>
+                      <th class="col-action">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     ${enquiries.map(enq => `
                       <tr>
-                        <td><strong>${enq.id}</strong></td>
-                        <td>${enq.clientName}</td>
-                        <td>${enq.eventName}</td>
-                        <td>${enq.submissionDate}</td>
-                        <td><span class="status-badge ${getStatusBadgeClass(enq.status)}">${enq.status}</span></td>
-                        <td>
+                        <td class="cell-ref"><strong>${enq.id}</strong></td>
+                        <td class="cell-client">${enq.clientName}</td>
+                        <td class="cell-event">${enq.eventName}</td>
+                        <td class="cell-date">${enq.submissionDate}</td>
+                        <td class="cell-status"><span class="status-badge ${getStatusBadgeClass(enq.status)}">${enq.status}</span></td>
+                        <td class="cell-action">
                           <button type="button" class="btn-secondary btn-sm" data-action="view-enquiry" data-id="${enq.id}">View</button>
                         </td>
                       </tr>
@@ -251,26 +251,26 @@
               </div>
 
               <div class="table-responsive">
-                <table class="dash-table">
+                <table class="dash-table dash-table-bookings">
                   <thead>
                     <tr>
-                      <th>Event</th>
-                      <th>Client</th>
-                      <th>Venue</th>
-                      <th>Date</th>
-                      <th>Status</th>
-                      <th>Action</th>
+                      <th class="col-event">Event</th>
+                      <th class="col-client">Client</th>
+                      <th class="col-venue">Venue</th>
+                      <th class="col-date">Date</th>
+                      <th class="col-status">Status</th>
+                      <th class="col-action">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     ${bookings.map(b => `
                       <tr>
-                        <td><strong>${b.eventName}</strong></td>
-                        <td>${b.clientName}</td>
-                        <td>${b.venue}</td>
-                        <td>${b.eventDate}</td>
-                        <td><span class="status-badge ${b.bookingStatus === 'Confirmed' ? 'badge-green' : 'badge-orange'}">${b.bookingStatus}</span></td>
-                        <td>
+                        <td class="cell-event"><strong>${b.eventName}</strong></td>
+                        <td class="cell-client">${b.clientName}</td>
+                        <td class="cell-venue">${b.venue}</td>
+                        <td class="cell-date">${b.eventDate}</td>
+                        <td class="cell-status"><span class="status-badge ${b.bookingStatus === 'Confirmed' ? 'badge-green' : 'badge-orange'}">${b.bookingStatus}</span></td>
+                        <td class="cell-action">
                           <button type="button" class="btn-secondary btn-sm" data-action="view-booking" data-id="${b.id}">Details</button>
                         </td>
                       </tr>
@@ -892,7 +892,7 @@
           </div>
 
           <!-- Financial Summary Cards -->
-          <div class="summary-cards-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 2rem;">
+          <div class="summary-cards-grid payment-summary-grid">
             <div class="summary-card">
               <span class="summary-card-label">Total Invoiced</span>
               <div class="summary-card-value">$${(metrics.totalInvoiced / 1000).toFixed(1)}k</div>
@@ -935,34 +935,34 @@
           </div>
 
           <div class="table-responsive">
-            <table class="dash-table">
+            <table class="dash-table dash-table-invoices">
               <thead>
                 <tr>
-                  <th>Invoice ID</th>
-                  <th>Booking Ref</th>
-                  <th>Client</th>
-                  <th>Event Name</th>
-                  <th>Due Date</th>
+                  <th class="col-ref">Invoice ID</th>
+                  <th class="col-ref">Booking Ref</th>
+                  <th class="col-client">Client</th>
+                  <th class="col-event">Event Name</th>
+                  <th class="col-date">Due Date</th>
                   <th>Total Amount</th>
                   <th>Paid Amount</th>
                   <th>Remaining</th>
-                  <th>Status</th>
-                  <th>Actions</th>
+                  <th class="col-status">Status</th>
+                  <th class="col-action">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 ${invoices.map(inv => `
                   <tr>
-                    <td><strong>${inv.id}</strong></td>
-                    <td>${inv.bookingId}</td>
-                    <td>${inv.clientName}</td>
-                    <td>${inv.eventName}</td>
-                    <td>${inv.dueDate}</td>
-                    <td>$${(inv.totalAmount || 0).toLocaleString()}</td>
-                    <td><span style="color: var(--status-paid);">$${(inv.paidAmount || 0).toLocaleString()}</span></td>
-                    <td><strong style="color: var(--gold-primary);">$${(inv.remainingAmount !== undefined ? inv.remainingAmount : 0).toLocaleString()}</strong></td>
-                    <td><span class="status-badge ${getStatusBadgeClass(inv.status)}">${inv.status}</span></td>
-                    <td>
+                    <td class="cell-ref"><strong>${inv.id}</strong></td>
+                    <td class="cell-ref">${inv.bookingId}</td>
+                    <td class="cell-client">${inv.clientName}</td>
+                    <td class="cell-event">${inv.eventName}</td>
+                    <td class="cell-date">${inv.dueDate}</td>
+                    <td style="white-space: nowrap;">$${(inv.totalAmount || 0).toLocaleString()}</td>
+                    <td style="white-space: nowrap;"><span style="color: var(--status-paid);">$${(inv.paidAmount || 0).toLocaleString()}</span></td>
+                    <td style="white-space: nowrap;"><strong style="color: var(--gold-primary);">$${(inv.remainingAmount !== undefined ? inv.remainingAmount : 0).toLocaleString()}</strong></td>
+                    <td class="cell-status"><span class="status-badge ${getStatusBadgeClass(inv.status)}">${inv.status}</span></td>
+                    <td class="cell-action">
                       <button type="button" class="btn-secondary btn-sm" data-action="view-invoice" data-id="${inv.id}">View Invoice</button>
                     </td>
                   </tr>

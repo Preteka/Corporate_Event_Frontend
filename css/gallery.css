@@ -238,6 +238,7 @@
   max-width: 700px;
   margin-inline: auto;
   margin-bottom: clamp(2rem, 3.5vw, 3rem);
+  text-align: center;
 }
 
 .gallery-intro-title {
@@ -248,6 +249,7 @@
   letter-spacing: -0.02em;
   color: var(--text-primary);
   margin: 0.65rem 0 1rem 0;
+  text-align: center;
 }
 
 .gallery-intro-desc {
@@ -256,6 +258,7 @@
   line-height: 1.65;
   color: var(--text-secondary);
   margin: 0;
+  text-align: center;
 }
 
 .gallery-category-nav {
@@ -272,7 +275,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.65rem 1.35rem;
-  border-radius: 30px;
+  border-radius: var(--radius-full);
   font-family: var(--font-body);
   font-size: 0.86rem;
   font-weight: 500;
@@ -383,27 +386,45 @@
   perspective-origin: 50% 50%;
   width: 100%;
   padding-block: 1.5rem;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .gallery-3d-track {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: clamp(0.75rem, 1.4vw, 1.25rem);
-  min-height: 540px;
+  min-height: 520px;
   width: 100%;
   position: relative;
   transition: gap var(--transition-normal);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-primary) var(--surface-card);
+  padding-bottom: 0.75rem;
+}
+
+.gallery-3d-track::-webkit-scrollbar {
+  height: 5px;
+}
+
+.gallery-3d-track::-webkit-scrollbar-track {
+  background: var(--surface-card);
+  border-radius: var(--radius-full);
+}
+
+.gallery-3d-track::-webkit-scrollbar-thumb {
+  background: var(--gold-primary);
+  border-radius: var(--radius-full);
 }
 
 .gallery-panel {
   position: relative;
-  height: clamp(480px, 58vh, 560px);
-  flex: 1;
-  min-width: 80px;
+  height: clamp(460px, 54vh, 540px);
+  flex: 1 0 150px;
+  min-width: 130px;
   max-width: 480px;
-  border-radius: 18px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
   background-color: var(--surface-card);
@@ -434,7 +455,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 38%;
   transition: transform 0.85s var(--ease-cinematic);
 }
 
@@ -488,6 +509,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 0.75rem;
 }
 
@@ -495,12 +517,19 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  min-width: 0;
   font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   color: var(--gold-primary);
   text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.gallery-category-tag span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .gallery-tag-dot {
@@ -518,29 +547,27 @@
   color: #FFFFFF;
   background: rgba(255, 255, 255, 0.15);
   padding: 0.2rem 0.65rem;
-  border-radius: 12px;
+  border-radius: var(--radius-full);
   backdrop-filter: blur(8px);
 }
 
 .gallery-panel-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
   font-weight: 600;
   line-height: 1.25;
   color: #FFFFFF;
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 .gallery-panel-desc {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: clamp(0.875rem, 1vw, 0.95rem);
   line-height: 1.55;
   color: #D1D5DB;
   margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 .gallery-expand-cta {
@@ -558,7 +585,9 @@
 
 .gallery-panel.is-active,
 .gallery-panel:hover {
-  flex: 3.5;
+  flex: 3.5 0 380px;
+  min-width: 360px;
+  max-width: 520px;
   transform: translateZ(45px) scale(1.02);
   z-index: 5;
   border-color: var(--gold-primary);
@@ -592,7 +621,8 @@
 }
 
 .gallery-3d-track.has-active .gallery-panel:not(.is-active):not(:hover) {
-  flex: 0.85;
+  flex: 1 0 140px;
+  min-width: 130px;
   filter: brightness(0.68) saturate(0.8);
   transform: scale(0.95);
 }
@@ -622,7 +652,7 @@
 /* Featured Large Anchor Card (001) */
 .sig-card-featured {
   position: relative;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: var(--surface-card);
   border: 1.5px solid rgba(216, 185, 118, 0.45);
@@ -733,7 +763,7 @@
 /* Supporting Cards (002, 003, 004) */
 .sig-card-supporting {
   position: relative;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: var(--surface-card);
   border: 1px solid rgba(216, 185, 118, 0.3);
@@ -819,10 +849,7 @@
   line-height: 1.5;
   color: var(--text-secondary);
   margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 /* --------------------------------------------------------------------------
@@ -834,6 +861,12 @@
   position: relative;
   overflow: hidden;
   transition: background-color var(--transition-normal);
+}
+
+#perspectives-in-motion .gallery-section-desc {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
 }
 
 .motion-bands-wrapper {
@@ -880,8 +913,8 @@
 .motion-card {
   position: relative;
   width: clamp(260px, 24vw, 340px);
-  height: clamp(170px, 16vw, 210px);
-  border-radius: 14px;
+  height: clamp(190px, 16vw, 220px);
+  border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
   background-color: var(--surface-card);
@@ -921,7 +954,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1rem 1.25rem;
+  padding: 1rem clamp(1rem, 2vw, 1.25rem);
 }
 
 .motion-category {
@@ -931,17 +964,17 @@
   letter-spacing: 0.14em;
   color: var(--gold-primary);
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .motion-title {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
   font-weight: 600;
+  line-height: 1.3;
   color: #FFFFFF;
   margin: 0.2rem 0 0 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
 }
 
 @keyframes bandDriftLeft {
@@ -974,7 +1007,7 @@
 .detail-card {
   position: relative;
   height: 380px;
-  border-radius: 18px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: var(--surface-card);
   border: 1px solid rgba(216, 185, 118, 0.3);
@@ -1083,10 +1116,7 @@
   line-height: 1.5;
   color: #D1D5DB;
   margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 /* --------------------------------------------------------------------------
@@ -1118,7 +1148,7 @@
 
 .mood-trigger-btn {
   padding: 0.6rem 1.25rem;
-  border-radius: 30px;
+  border-radius: var(--radius-full);
   font-family: var(--font-body);
   font-size: 0.84rem;
   font-weight: 500;
@@ -1153,7 +1183,7 @@
 
 .mood-primary-card {
   position: relative;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: var(--surface-card);
   border: 1.5px solid rgba(216, 185, 118, 0.45);
@@ -1233,7 +1263,7 @@
 .mood-sub-card {
   position: relative;
   flex: 1;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: var(--surface-card);
   border: 1px solid rgba(216, 185, 118, 0.35);
@@ -1322,7 +1352,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.55rem 1.15rem;
-  border-radius: 30px;
+  border-radius: var(--radius-full);
   background-color: var(--surface-card);
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
@@ -1367,7 +1397,7 @@
   position: relative;
   width: clamp(280px, 28vw, 380px);
   height: clamp(220px, 22vw, 290px);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
   background-color: var(--surface-card);
@@ -1471,7 +1501,7 @@ body.lightbox-active {
   width: 100%;
   max-width: 1080px;
   max-height: 88vh;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--surface-card);
   border: 1.5px solid rgba(216, 185, 118, 0.45);
@@ -1593,7 +1623,7 @@ body.lightbox-active {
   text-transform: uppercase;
   background: rgba(216, 185, 118, 0.12);
   padding: 0.35rem 0.85rem;
-  border-radius: 20px;
+  border-radius: var(--radius-full);
   border: 1px solid rgba(216, 185, 118, 0.3);
 }
 
@@ -1785,26 +1815,174 @@ body.lightbox-active {
    12. Responsive Breakpoints
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  /* -------------------------------------------------------------------------
+     Section 3: Interactive 3D Perspective Stage & Expandable Accordion at 1024px
+     Preserves the interactive accordion physics while ensuring collapsed
+     panels maintain a comfortable 140px-160px width to eliminate image cropping.
+     ------------------------------------------------------------------------- */
+  .gallery-3d-stage {
+    perspective: none;
+    padding-block: 1rem;
+    overflow: hidden;
+  }
+
+  .gallery-3d-track {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    padding-inline: 0.75rem;
+    padding-block: 0.75rem 1.5rem;
+    gap: 1.15rem;
+    min-height: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-primary) var(--surface-card);
+  }
+
+  .gallery-3d-track::-webkit-scrollbar {
+    height: 5px;
+  }
+  .gallery-3d-track::-webkit-scrollbar-track {
+    background: var(--surface-card);
+    border-radius: var(--radius-full);
+  }
+  .gallery-3d-track::-webkit-scrollbar-thumb {
+    background: var(--gold-primary);
+    border-radius: var(--radius-full);
+  }
+
+  .gallery-panel {
+    flex: 1 0 160px;
+    min-width: 150px;
+    max-width: 480px;
+    height: 450px;
+    scroll-snap-align: center;
+    border-radius: var(--radius-lg);
+  }
+
+  .gallery-panel.is-active,
+  .gallery-panel:hover {
+    flex: 2.8 0 380px;
+    min-width: 360px;
+    max-width: 480px;
+    transform: scale(1.02);
+  }
+
+  .gallery-3d-track.has-active .gallery-panel:not(.is-active):not(:hover) {
+    flex: 1 0 150px;
+    min-width: 140px;
+    filter: brightness(0.72) saturate(0.85);
+    transform: scale(0.97);
+  }
+
+  .gallery-panel-img {
+    object-position: center 38%;
+  }
+
+  /* Display navigation controls & dots on tablet view */
+  .gallery-mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  /* -------------------------------------------------------------------------
+     Section 4: The Signature Collection at 1024px
+     ------------------------------------------------------------------------- */
   .signature-editorial-grid {
     grid-template-columns: 1fr;
+    gap: 1.75rem;
     align-items: stretch;
   }
   .sig-card-featured {
-    min-height: 480px;
+    min-height: 440px;
+    height: 440px;
+  }
+  .sig-card-featured .sig-img {
+    object-position: center 35%;
   }
   .sig-supporting-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
     align-self: stretch;
   }
+  .sig-card-supporting {
+    grid-template-columns: 200px 1fr;
+    min-height: 155px;
+  }
+  .sig-sub-thumb img {
+    object-position: center 40%;
+  }
+
+  /* -------------------------------------------------------------------------
+     Section 5: Perspectives in Motion (Horizontal Ribbon) at 1024px
+     ------------------------------------------------------------------------- */
+  .motion-card {
+    width: 300px;
+    height: 200px;
+  }
+  .motion-card img {
+    object-position: center 40%;
+  }
+
+  /* -------------------------------------------------------------------------
+     Section 6: Hidden Details Discovery at 1024px
+     ------------------------------------------------------------------------- */
   .details-discovery-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
+  .detail-card {
+    height: 330px;
+  }
+  .detail-img {
+    object-position: center 40%;
+  }
+
+  /* -------------------------------------------------------------------------
+     Section 7: Light & Atmosphere at 1024px
+     ------------------------------------------------------------------------- */
   .atmosphere-showcase-stage {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
     min-height: auto;
   }
   .mood-primary-card {
-    min-height: 420px;
+    min-height: 400px;
+    height: 400px;
   }
+  .mood-primary-card img {
+    object-position: center 35%;
+  }
+  .mood-supporting-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .mood-sub-card {
+    min-height: 220px;
+    height: 220px;
+  }
+  .mood-sub-card img {
+    object-position: center 40%;
+  }
+
+  /* -------------------------------------------------------------------------
+     Section 8: The Endless Frame at 1024px
+     ------------------------------------------------------------------------- */
+  .endless-card {
+    width: 320px;
+    height: 230px;
+  }
+  .endless-card img {
+    object-position: center 40%;
+  }
+
   .lightbox-stage {
     grid-template-columns: 1fr;
     max-height: 80vh;
@@ -1934,7 +2112,7 @@ body.lightbox-active {
   .pagination-dot.is-active {
     background: var(--gold-primary);
     width: 20px;
-    border-radius: 10px;
+    border-radius: var(--radius-full);
   }
 
   /* Hidden Details single column on mobile */
